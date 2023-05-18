@@ -1,4 +1,5 @@
 @file:Suppress("UnstableApiUsage")
+
 plugins {
     id("com.android.application")
     id("kotlin-parcelize")
@@ -22,11 +23,13 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
-        debug {
+
+        getByName("debug") {
             isMinifyEnabled = false
         }
     }
@@ -44,9 +47,8 @@ android {
         jvmTarget = "1.8"
     }
 
-
-    buildFeatures  {
-        viewBinding = true
+    viewBinding {
+        enable = true
     }
 
     packaging {
