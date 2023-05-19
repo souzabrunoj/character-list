@@ -6,6 +6,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
 }
+apply(from = "../config/detekt/detekt.gradle")
 
 android {
     namespace = ConfigData.applicationId

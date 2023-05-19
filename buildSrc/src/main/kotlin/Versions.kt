@@ -3,6 +3,7 @@ object Versions {
     const val kotlinVersion = "1.7.20"
     const val gradlePluginVersion = "8.0.1"
     const val kotlinGradlePluginVersion = kotlinVersion
+    const val detektVersion = "1.22.0"
 
     const val coreKtxVersion = "1.9.0"
     const val lifecycleRuntimeVersion = "2.6.1"
