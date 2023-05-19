@@ -50,7 +50,7 @@ def taskName = 'projectCoverageTestReport'
 tasks.create(name: taskName, type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
 
     group = "Reporting"
-    description = "Generate Jacoco coverage reports for the unit tests."
+    description = "Generate Jacoco coverage reports for the $taskName"
 
     reports {
         xml.required = false
