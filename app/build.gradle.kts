@@ -6,8 +6,6 @@ plugins {
     kotlin("android")
     kotlin("kapt")
 }
-apply(from = "../config/detekt/detekt.gradle")
-apply(from = "../config/jacoco/jacoco.gradle")
 
 android {
     namespace = ConfigData.applicationId
@@ -86,3 +84,6 @@ dependencies {
     projectUnitTestDependencies()
     projectAndroidUtils()
 }
+
+apply(from = "../config/detekt/detekt.gradle")
+apply(from = "../config/jacoco/jacoco.gradle")

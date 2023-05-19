@@ -17,6 +17,10 @@ buildscript {
     }
 }
 
+allprojects {
+    apply(plugin = "jacoco")
+}
+
 tasks {
     register("clean", Delete::class) {
         delete(rootProject.buildDir)
