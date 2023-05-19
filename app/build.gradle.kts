@@ -7,6 +7,7 @@ plugins {
     kotlin("kapt")
 }
 apply(from = "../config/detekt/detekt.gradle")
+apply(from = "../config/jacoco/jacoco.gradle")
 
 android {
     namespace = ConfigData.applicationId
@@ -32,21 +33,11 @@ android {
 
         getByName("debug") {
             isMinifyEnabled = false
+            enableUnitTestCoverage = true
+            enableAndroidTestCoverage = true
         }
     }
 
-    flavorDimensions.add("version")
-
-    productFlavors {
-
-        create("prod") {
-
-        }
-
-        create("dev") {
-            applicationIdSuffix = ".dev"
-        }
-    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -70,8 +61,19 @@ android {
             excludes.add("/META-INF/{AL2.0,LGPL2.1}")
         }
     }
-}
 
+    testCoverage {
+        jacocoVersion = Versions.jacocoVersion
+    }
+
+    testOptions {
+        execution = "ANDROID_TEST_ORCHESTRATOR"
+        animationsDisabled = true
+
+        unitTests.isReturnDefaultValues = true
+        unitTests.isIncludeAndroidResources = true
+    }
+}
 
 dependencies {
 
@@ -82,4 +84,5 @@ dependencies {
 
     projectAndroidTestImplementation()
     projectUnitTestDependencies()
+    projectAndroidUtils()
 }

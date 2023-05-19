@@ -1,0 +1,83 @@
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = Versions.jacocoVersion
+}
+
+ext.excludes = [
+        '**/databinding/*Binding.*',
+        '**/R.class',
+        '**/R$*.class',
+        '**/BuildConfig.*',
+        '**/Manifest*.*',
+        '**/*Test*.*',
+        'android/**/*.*',
+        '**/*$ViewInjector*.*',
+        '**/*$ViewBinder*.*',
+        '**/Lambda$*.class',
+        '**/Lambda.class',
+        '**/*Lambda.class',
+        '**/*Lambda*.class',
+        '**/*_MembersInjector.class',
+        '**/Dagger*Component*.*',
+        '**/*Module_*Factory.class',
+        '**/di/module/*',
+        '**/*_Factory*.*',
+        '**/*Module*.*',
+        '**/*Dagger*.*',
+        '**/*Hilt*.*',
+        // kotlin
+        '**/*MapperImpl*.*',
+        '**/*$ViewInjector*.*',
+        '**/*$ViewBinder*.*',
+        '**/BuildConfig.*',
+        '**/*Component*.*',
+        '**/*BR*.*',
+        '**/Manifest*.*',
+        '**/*$Lambda$*.*',
+        '**/*Companion*.*',
+        '**/*Module*.*',
+        '**/*Dagger*.*',
+        '**/*Hilt*.*',
+        '**/*MembersInjector*.*',
+        '**/*_MembersInjector.class',
+        '**/*_Factory*.*',
+        '**/*_Provide*Factory*.*',
+        '**/*Extensions*.*'
+]
+
+tasks.create(name: "unitTestCoverage", type: JacocoReport, dependsOn: 'testDebugUnitTest') {
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports for the unitTestCoverage build."
+
+    reports {
+        xml.required = true
+        html.required = true
+    }
+
+    def debugTree = fileTree(dir: "${buildDir}/intermediates/classes/debug", excludes: project.excludes)
+    def mainSrc = "${project.projectDir}/src/main/java"
+
+    sourceDirectories.files.add(files([mainSrc]))
+    classDirectories.files.add(files([debugTree]))
+    executionData.files.addAll(files("${buildDir}/jacoco/testDebugUnitTest.exec"))
+}
+
+tasks.create(name: "mergeTestCoverage", type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports for the merged build."
+
+    reports {
+        xml.required = true
+        html.required = true
+    }
+
+    def debugTree = fileTree(dir: "${buildDir}/intermediates/classes/debug", excludes: project.excludes)
+    def mainSrc = "${project.projectDir}/src/main/java"
+
+    sourceDirectories.files.add(files([mainSrc]))
+    classDirectories.files.add(files([debugTree]))
+    executionData.files.addAll(
+            fileTree(dir: "$buildDir", includes: ["jacoco/testDebugUnitTest.exec", "outputs/code-coverage/connected/*coverage.ec"])
+    )
+}
