@@ -19,6 +19,7 @@ buildscript {
 
 allprojects {
     apply(plugin = "jacoco")
+    apply(plugin = "io.gitlab.arturbosch.detekt")
 }
 
 tasks {

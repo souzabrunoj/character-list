@@ -1,9 +1,7 @@
-apply plugin: 'io.gitlab.arturbosch.detekt'
 
 detekt {
     toolVersion = Versions.detektVersion
     config = files("$rootDir/config/detekt/detekt-config.yml")
-    config = files("$rootDir/config/detekt/detekt-baseline.xml")
     parallel = true
 }
 
@@ -17,3 +15,6 @@ tasks.named("detekt").configure {
     }
 }
 
+dependencies {
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${Versions.detektVersion}")
+}
