@@ -3,6 +3,7 @@
 plugins {
     id("com.android.application")
     id("kotlin-parcelize")
+    id("androidx.navigation.safeargs")
     kotlin("android")
     kotlin("kapt")
 }
@@ -84,6 +85,7 @@ dependencies {
     projectAndroidTestImplementation()
     projectUnitTestDependencies()
     projectAndroidUtils()
+    networkImplementation()
 }
 
 apply(from = "../config/detekt/detekt.gradle")

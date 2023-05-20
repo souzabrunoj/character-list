@@ -1,4 +1,4 @@
-package br.com.souzabrunoj.movielist
+package br.com.souzabrunoj.characterslist
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

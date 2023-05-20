@@ -26,6 +26,14 @@ fun DependencyHandler.koinImplementation() {
     add(CONFIGURATION_NAME, "io.insert-koin:koin-android:${Versions.koinVersion}")
 }
 
+fun DependencyHandler.networkImplementation() {
+    add(CONFIGURATION_NAME,"com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}")
+    add(CONFIGURATION_NAME,"com.squareup.retrofit2:converter-gson:${Versions.retrofitVersion}")
+    add(CONFIGURATION_NAME,"com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofitCoroutinesVersion}")
+    add(CONFIGURATION_NAME,"com.squareup.okhttp3:logging-interceptor:${Versions.interceptorVersion}")
+    add(CONFIGURATION_NAME,"com.google.code.gson:gson:${Versions.gsonVersion}")
+}
+
 fun DependencyHandler.navigationImplementation() {
     add(CONFIGURATION_NAME, "androidx.navigation:navigation-fragment-ktx:${Versions.navigationVersion}")
     add(CONFIGURATION_NAME, "androidx.navigation:navigation-ui-ktx:${Versions.navigationVersion}")

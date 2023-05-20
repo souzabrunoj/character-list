@@ -1,6 +1,6 @@
 object Versions {
     // Kotlin
-    const val kotlinVersion = "1.7.20"
+    const val kotlinVersion = "1.8.21"
     const val gradlePluginVersion = "8.0.1"
     const val kotlinGradlePluginVersion = kotlinVersion
 
@@ -10,6 +10,12 @@ object Versions {
     const val materialtVersion = "1.5.0"
     const val koinVersion = "3.4.0"
     const val navigationVersion = "2.5.3"
+
+    //Networking
+    const val retrofitVersion = "2.6.1"
+    const val retrofitCoroutinesVersion = "0.9.2"
+    const val interceptorVersion = "4.1.0"
+    const val gsonVersion = "2.9.0"
 
     //Tools
     const val detektVersion = "1.22.0"
