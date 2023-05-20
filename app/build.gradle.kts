@@ -78,6 +78,8 @@ dependencies {
     materialImplementation()
     lifecycleRuntimeDependencies()
     constraintLayoutImplementation()
+    koinImplementation()
+    navigationImplementation()
 
     projectAndroidTestImplementation()
     projectUnitTestDependencies()

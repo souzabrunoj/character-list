@@ -3,13 +3,17 @@ object Versions {
     const val kotlinVersion = "1.7.20"
     const val gradlePluginVersion = "8.0.1"
     const val kotlinGradlePluginVersion = kotlinVersion
-    const val detektVersion = "1.22.0"
-    const val jacocoVersion = "0.8.8"
 
     const val coreKtxVersion = "1.9.0"
     const val lifecycleRuntimeVersion = "2.6.1"
     const val constraintLayoutVersion = "2.1.4"
     const val materialtVersion = "1.5.0"
+    const val koinVersion = "3.4.0"
+    const val navigationVersion = "2.5.3"
+
+    //Tools
+    const val detektVersion = "1.22.0"
+    const val jacocoVersion = "0.8.8"
 
     //Tests
     const val junitVersion = "4.13.2"

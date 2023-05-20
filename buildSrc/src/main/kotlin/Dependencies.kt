@@ -22,10 +22,20 @@ fun DependencyHandler.materialImplementation() {
     add(CONFIGURATION_NAME, "com.google.android.material:material:${Versions.materialtVersion}")
 }
 
+fun DependencyHandler.koinImplementation() {
+    add(CONFIGURATION_NAME, "io.insert-koin:koin-android:${Versions.koinVersion}")
+}
+
+fun DependencyHandler.navigationImplementation() {
+    add(CONFIGURATION_NAME, "androidx.navigation:navigation-fragment-ktx:${Versions.navigationVersion}")
+    add(CONFIGURATION_NAME, "androidx.navigation:navigation-ui-ktx:${Versions.navigationVersion}")
+}
+
 fun DependencyHandler.projectUnitTestDependencies() {
     add(TESTE_CONFIGURATION_NAME, "junit:junit:${Versions.junitVersion}")
-    add(TESTE_CONFIGURATION_NAME, "junit:junit:${Versions.junitVersion}")
     add(TESTE_CONFIGURATION_NAME,"org.robolectric:robolectric:${Versions.robolectricVersion}")
+    add(TESTE_CONFIGURATION_NAME,"io.insert-koin:koin-test:${Versions.koinVersion}")
+    add(TESTE_CONFIGURATION_NAME,"io.insert-koin:koin-test-junit4:${Versions.koinVersion}")
 }
 
 fun DependencyHandler.projectAndroidTestImplementation() {
@@ -42,6 +52,7 @@ fun DependencyHandler.projectConfigurantion() {
     add(CLASSPATH_CONFIGURATION, "com.android.tools.build:gradle:${Versions.gradlePluginVersion}")
     add(CLASSPATH_CONFIGURATION, "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinGradlePluginVersion}")
     add(CLASSPATH_CONFIGURATION, "org.jacoco:org.jacoco.core:${Versions.jacocoVersion}")
+    add(CLASSPATH_CONFIGURATION, "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigationVersion}")
 }
 
 fun DependencyHandler.projectAndroidUtils(){
