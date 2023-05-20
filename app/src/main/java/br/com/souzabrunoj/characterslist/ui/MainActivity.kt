@@ -1,10 +1,10 @@
-package br.com.souzabrunoj.movielist.ui
+package br.com.souzabrunoj.characterslist.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
-import br.com.souzabrunoj.movielist.R
-import br.com.souzabrunoj.movielist.databinding.ActivityMainBinding
+import br.com.souzabrunoj.characterslist.R
+import br.com.souzabrunoj.characterslist.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

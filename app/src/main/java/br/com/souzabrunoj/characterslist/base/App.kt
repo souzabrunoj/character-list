@@ -1,7 +1,7 @@
-package br.com.souzabrunoj.movielist.base
+package br.com.souzabrunoj.characterslist.base
 
 import android.app.Application
-import br.com.souzabrunoj.movielist.di.presentationModule
+import br.com.souzabrunoj.characterslist.di.presentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
