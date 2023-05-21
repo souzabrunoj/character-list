@@ -10,6 +10,12 @@
     <!-- Padding -->
     <dimen name="padding_xxsmall">8dp</dimen>
     <dimen name="padding_xxxsmall">6dp</dimen>
+
     <!-- Border -->
     <dimen name="border_xsmall">1dp</dimen>
+
+    <!-- Font Size -->
+    <dimen name="font_size_small">14sp</dimen>
+    <dimen name="font_size_medium">16sp</dimen>
+    <dimen name="font_size_big">20sp</dimen>
 </resources>

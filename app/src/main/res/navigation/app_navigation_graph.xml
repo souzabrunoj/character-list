@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/character_details_fragment"
-        android:name="br.com.souzabrunoj.characterslist.ui.utils.details.CharacterDetailsFragment"
+        android:name="br.com.souzabrunoj.characterslist.ui.details.CharacterDetailsFragment"
         android:label="CharacterDetailsFragment"
         tools:layout="@layout/fragment_character_details">
 

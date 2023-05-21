@@ -1,4 +1,4 @@
-package br.com.souzabrunoj.characterslist.ui.utils.details.adapter
+package br.com.souzabrunoj.characterslist.ui.details.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

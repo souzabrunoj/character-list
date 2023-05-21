@@ -5,4 +5,14 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="TextAppearance">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/font_size_small</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextAppearance.Bold">
+       <item name="android:textStyle">bold</item>
+    </style>
 </resources>
