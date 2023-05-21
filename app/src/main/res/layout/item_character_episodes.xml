@@ -2,15 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/tv_episode_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/padding_xxxsmall"
-        android:paddingBottom="@dimen/padding_xxxsmall"
+        android:paddingTop="@dimen/padding_xxsmall"
+        android:textStyle=""
+        android:paddingBottom="@dimen/padding_xxsmall"
+        android:textColor="@color/hyper_link"
         tools:text="https://rickandmortyapi.com/api/episode/1" />
 
 </LinearLayout>
