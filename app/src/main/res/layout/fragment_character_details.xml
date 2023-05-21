@@ -21,7 +21,7 @@
             app:shapeAppearanceOverlay="@style/RoundedImageViewStyle"
             app:strokeColor="@color/black"
             app:strokeWidth="@dimen/border_xsmall"
-            tools:src="@android:drawable/alert_dark_frame" />
+            tools:src="@drawable/img_avatar_place_holder" />
 
         <TextView
             android:id="@+id/tv_name"

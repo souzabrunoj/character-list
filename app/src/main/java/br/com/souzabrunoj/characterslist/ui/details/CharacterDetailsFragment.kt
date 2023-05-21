@@ -1,8 +1,10 @@
 package br.com.souzabrunoj.characterslist.ui.details
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import br.com.souzabrunoj.characterslist.R
@@ -41,19 +43,25 @@ class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
         binding.apply {
             with(character) {
                 ivCharacterImage.loadImage(image)
-                tvName.text = getString(R.string.character_name_string_format, name)
+                tvName.text = name
                 tvStatus.text = getString(R.string.character_status_string_format, status)
                 tvSpecies.text = getString(R.string.character_species_string_format, species)
                 tvGender.text = getString(R.string.character_gender_string_format, gender)
                 tvLocation.text = getString(R.string.location_string_format, location.name)
             }
         }
-        setupLocations(character.episode)
+        setupEpisodes(character.episode)
     }
 
-    private fun setupLocations(locations: List<String>) {
+    private fun setupEpisodes(episodes: List<String>) {
         binding.rvEpisodes.apply {
-            adapter = CharacterEpisodesAdapter(locations)
+            adapter = CharacterEpisodesAdapter(episodes, ::openEpisodes)
+        }
+    }
+
+    private fun openEpisodes(url: String) {
+        CustomTabsIntent.Builder().build().apply {
+            launchUrl(context, Uri.parse(url))
         }
     }
 }

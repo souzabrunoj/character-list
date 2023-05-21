@@ -4,12 +4,12 @@ import com.google.gson.annotations.SerializedName
 
 data class CharactersResponse(
     @SerializedName("info")
-    val info: Info,
+    val info: CharacterInfoResponse,
     @SerializedName("results")
-    val results: List<Result>
+    val results: List<CharacterResultResponse>
 )
 
-data class Info(
+data class CharacterInfoResponse(
     @SerializedName("count")
     val count: Int,
     @SerializedName("next")
@@ -20,7 +20,7 @@ data class Info(
     val prev: String
 )
 
-data class Result(
+data class CharacterResultResponse(
     @SerializedName("created")
     val created: String,
     @SerializedName("episode")
@@ -32,11 +32,11 @@ data class Result(
     @SerializedName("image")
     val image: String,
     @SerializedName("location")
-    val location: Location,
+    val location: CharacterLocationResponse,
     @SerializedName("name")
     val name: String,
     @SerializedName("origin")
-    val origin: Origin,
+    val origin: CharacterOriginResponse,
     @SerializedName("species")
     val species: String,
     @SerializedName("status")
@@ -47,14 +47,14 @@ data class Result(
     val url: String
 )
 
-data class Location(
+data class CharacterLocationResponse(
     @SerializedName("name")
     val name: String,
     @SerializedName("url")
     val url: String
 )
 
-data class Origin(
+data class CharacterOriginResponse(
     @SerializedName("name")
     val name: String,
     @SerializedName("url")

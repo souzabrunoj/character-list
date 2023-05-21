@@ -10,9 +10,9 @@ object Versions {
     const val materialtVersion = "1.5.0"
     const val koinVersion = "3.4.0"
     const val navigationVersion = "2.5.3"
-    const val glideVersion = "4.15.1"
-    const val glideOkhttVersion = "4.11.0"
+    const val picassoVersion = "2.8"
     const val annotationVersion = "1.6.0"
+    const val customTabVersion = "28.0.0"
 
     //Networking
     const val retrofitVersion = "2.6.1"

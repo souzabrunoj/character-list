@@ -8,4 +8,6 @@
     <color name="gameOverBackground">#f8bbd0</color>
     <color name="black">@android:color/black</color>
     <color name="white">@android:color/white</color>
+    <color name="gray">#eeeeee</color>
+    <color name="hyper_link">#175ABE</color>
 </resources>

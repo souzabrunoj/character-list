@@ -81,9 +81,10 @@ dependencies {
     constraintLayoutImplementation()
     koinImplementation()
     navigationImplementation()
-    glideImplementation()
+    picassoImplementation()
     annotationImplementation()
     networkImplementation()
+    customTabImplementation()
 
     projectAndroidTestImplementation()
     projectUnitTestDependencies()

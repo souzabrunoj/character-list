@@ -26,12 +26,15 @@ fun DependencyHandler.koinImplementation() {
     add(CONFIGURATION_NAME, "io.insert-koin:koin-android:${Versions.koinVersion}")
 }
 
-fun DependencyHandler.glideImplementation() {
-    add(CONFIGURATION_NAME, "com.github.bumptech.glide:glide:${Versions.glideVersion}")
-    add(CONFIGURATION_NAME, "com.github.bumptech.glide:okhttp3-integration:${Versions.glideOkhttVersion}")
+fun DependencyHandler.picassoImplementation() {
+    add(CONFIGURATION_NAME, "com.squareup.picasso:picasso:${Versions.picassoVersion}")
 }
 fun DependencyHandler.annotationImplementation() {
     add(CONFIGURATION_NAME, "androidx.annotation:annotation:${Versions.annotationVersion}")
+}
+
+fun DependencyHandler.customTabImplementation() {
+    add(CONFIGURATION_NAME, "com.android.support:customtabs:${Versions.customTabVersion}")
 }
 
 fun DependencyHandler.networkImplementation() {
