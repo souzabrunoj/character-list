@@ -10,13 +10,15 @@ object Versions {
     const val materialtVersion = "1.5.0"
     const val koinVersion = "3.4.0"
     const val navigationVersion = "2.5.3"
+    const val glideVersion = "4.15.1"
+    const val glideOkhttVersion = "4.11.0"
+    const val annotationVersion = "1.6.0"
 
     //Networking
     const val retrofitVersion = "2.6.1"
     const val retrofitCoroutinesVersion = "0.9.2"
     const val interceptorVersion = "4.1.0"
     const val gsonVersion = "2.9.0"
-    const val coilVersion = "2.3.0"
 
     //Tools
     const val detektVersion = "1.22.0"

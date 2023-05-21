@@ -5,7 +5,7 @@ import br.com.souzabrunoj.characterslist.data.details.service.CharacterDetailsSe
 
 class CharacterDetailsRepositoryImpl(private val service: CharacterDetailsService) : CharacterDetailsRepository {
 
-    override suspend fun getCharacterDetails(characterId: String): CharacterDetailsResponse {
+    override suspend fun getCharacterDetails(characterId: Int): CharacterDetailsResponse {
         return service.getCharacterDetails(characterId)
     }
 }

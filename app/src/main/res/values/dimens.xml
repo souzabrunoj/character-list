@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Margins -->
+    <dimen name="margin_medium">24dp</dimen>
+    <dimen name="margin_small">16dp</dimen>
+    <dimen name="margin_xsmall">16dp</dimen>
+    <dimen name="margin_xxsmall">8dp</dimen>
+    <dimen name="margin_xxxsmall">6dp</dimen>
+
+    <!-- Padding -->
+    <dimen name="padding_xxsmall">8dp</dimen>
+    <dimen name="padding_xxxsmall">6dp</dimen>
+    <!-- Border -->
+    <dimen name="border_xsmall">1dp</dimen>
+</resources>

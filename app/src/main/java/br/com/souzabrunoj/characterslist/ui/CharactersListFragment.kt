@@ -30,7 +30,8 @@ class CharactersListFragment : Fragment() {
         binding.btNextScreen.setOnClickListener {
             navController.navigate(
                 CharactersListFragmentDirections.actionFromCharacterListToCharacterDetailsFragment(
-                    viewModel.getCharacterId()
+                    viewModel.getCharacterId().results[0].id,
+                    viewModel.getCharacterId().results[0].name
                 )
             )
         }

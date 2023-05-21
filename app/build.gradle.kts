@@ -81,12 +81,13 @@ dependencies {
     constraintLayoutImplementation()
     koinImplementation()
     navigationImplementation()
-    coilImplementation()
+    glideImplementation()
+    annotationImplementation()
+    networkImplementation()
 
     projectAndroidTestImplementation()
     projectUnitTestDependencies()
     projectAndroidUtils()
-    networkImplementation()
 }
 
 apply(from = "../config/detekt/detekt.gradle")

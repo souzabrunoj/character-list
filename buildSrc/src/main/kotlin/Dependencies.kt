@@ -26,8 +26,12 @@ fun DependencyHandler.koinImplementation() {
     add(CONFIGURATION_NAME, "io.insert-koin:koin-android:${Versions.koinVersion}")
 }
 
-fun DependencyHandler.coilImplementation() {
-    add(CONFIGURATION_NAME, "io.coil-kt:coil:${Versions.coilVersion}")
+fun DependencyHandler.glideImplementation() {
+    add(CONFIGURATION_NAME, "com.github.bumptech.glide:glide:${Versions.glideVersion}")
+    add(CONFIGURATION_NAME, "com.github.bumptech.glide:okhttp3-integration:${Versions.glideOkhttVersion}")
+}
+fun DependencyHandler.annotationImplementation() {
+    add(CONFIGURATION_NAME, "androidx.annotation:annotation:${Versions.annotationVersion}")
 }
 
 fun DependencyHandler.networkImplementation() {

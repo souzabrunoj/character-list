@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Characters List</string>
+
+    <!-- Character Details -->
+    <string name="character_name_string_format">Name: %s</string>
+    <string name="character_status_string_format">Status: %s</string>
+    <string name="character_gender_string_format">Gender: %s</string>
+    <string name="character_species_string_format">Species: %s</string>
+    <string name="location_string_format">Location: %s</string>
+    <string name="episodes">Episodes:</string>
+
 </resources>
