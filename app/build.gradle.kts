@@ -85,6 +85,7 @@ dependencies {
     annotationImplementation()
     networkImplementation()
     customTabImplementation()
+    pagingImplementation()
 
     projectAndroidTestImplementation()
     projectUnitTestDependencies()

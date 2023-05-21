@@ -13,6 +13,7 @@ object Versions {
     const val picassoVersion = "2.8"
     const val annotationVersion = "1.6.0"
     const val customTabVersion = "28.0.0"
+    const val pagingVersion = "3.1.1"
 
     //Networking
     const val retrofitVersion = "2.6.1"

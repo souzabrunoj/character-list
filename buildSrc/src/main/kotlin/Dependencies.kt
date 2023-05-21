@@ -36,6 +36,9 @@ fun DependencyHandler.annotationImplementation() {
 fun DependencyHandler.customTabImplementation() {
     add(CONFIGURATION_NAME, "com.android.support:customtabs:${Versions.customTabVersion}")
 }
+fun DependencyHandler.pagingImplementation() {
+    add(CONFIGURATION_NAME, "androidx.paging:paging-runtime:${Versions.pagingVersion}")
+}
 
 fun DependencyHandler.networkImplementation() {
     add(CONFIGURATION_NAME,"com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}")
