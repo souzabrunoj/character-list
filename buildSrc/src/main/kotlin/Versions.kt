@@ -16,6 +16,7 @@ object Versions {
     const val retrofitCoroutinesVersion = "0.9.2"
     const val interceptorVersion = "4.1.0"
     const val gsonVersion = "2.9.0"
+    const val coilVersion = "2.3.0"
 
     //Tools
     const val detektVersion = "1.22.0"

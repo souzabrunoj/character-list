@@ -26,6 +26,10 @@ fun DependencyHandler.koinImplementation() {
     add(CONFIGURATION_NAME, "io.insert-koin:koin-android:${Versions.koinVersion}")
 }
 
+fun DependencyHandler.coilImplementation() {
+    add(CONFIGURATION_NAME, "io.coil-kt:coil:${Versions.coilVersion}")
+}
+
 fun DependencyHandler.networkImplementation() {
     add(CONFIGURATION_NAME,"com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}")
     add(CONFIGURATION_NAME,"com.squareup.retrofit2:converter-gson:${Versions.retrofitVersion}")
