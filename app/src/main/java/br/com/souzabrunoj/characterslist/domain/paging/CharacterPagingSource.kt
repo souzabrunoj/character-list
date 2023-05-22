@@ -2,19 +2,20 @@ package br.com.souzabrunoj.characterslist.domain.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import br.com.souzabrunoj.characterslist.data.list.response.CharactersListResultResponse
 import br.com.souzabrunoj.characterslist.data.list.service.CharactersListService
+import br.com.souzabrunoj.characterslist.domain.data.list.CharactersListResult
+import br.com.souzabrunoj.characterslist.domain.data.list.toDomain
 
 private const val NUMBER_ONE = 1
 
 class CharacterPagingSource(
     private val service: CharactersListService
-) : PagingSource<Int, CharactersListResultResponse>() {
+) : PagingSource<Int, CharactersListResult>() {
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, CharactersListResultResponse> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, CharactersListResult> {
         return try {
             val position = params.key ?: NUMBER_ONE
-            val response = service.getCharacterList(position)
+            val response = service.getCharacterList(position).toDomain()
             LoadResult.Page(
                 data = response.results,
                 prevKey = if (position == NUMBER_ONE) null else position.minus(NUMBER_ONE),
@@ -25,7 +26,7 @@ class CharacterPagingSource(
         }
     }
 
-    override fun getRefreshKey(state: PagingState<Int, CharactersListResultResponse>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, CharactersListResult>): Int? {
         return state.anchorPosition?.let { anchorPosition ->
             val anchorPage = state.closestPageToPosition(anchorPosition)
             anchorPage?.prevKey?.plus(NUMBER_ONE) ?: anchorPage?.nextKey?.minus(NUMBER_ONE)

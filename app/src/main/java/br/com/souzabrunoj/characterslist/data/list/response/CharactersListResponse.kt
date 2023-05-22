@@ -4,59 +4,59 @@ import com.google.gson.annotations.SerializedName
 
 data class CharactersListResponse(
     @SerializedName("info")
-    val info: CharactersListInfoResponse,
+    val info: CharactersListInfoResponse?,
     @SerializedName("results")
-    val results: List<CharactersListResultResponse>
+    val results: List<CharactersListResultResponse>?
 )
 
 data class CharactersListInfoResponse(
     @SerializedName("count")
-    val count: Int,
+    val count: Int?,
     @SerializedName("next")
-    val next: String,
+    val next: String?,
     @SerializedName("pages")
-    val pages: Int,
+    val pages: Int?,
     @SerializedName("prev")
-    val prev: String
+    val prev: String?
 )
 
 data class CharactersListResultResponse(
     @SerializedName("created")
-    val created: String,
+    val created: String?,
     @SerializedName("episode")
-    val episode: List<String>,
+    val episode: List<String>?,
     @SerializedName("gender")
-    val gender: String,
+    val gender: String?,
     @SerializedName("id")
-    val id: Int,
+    val id: Int?,
     @SerializedName("image")
-    val image: String,
+    val image: String?,
     @SerializedName("location")
-    val location: CharactersListLocationResponse,
+    val location: CharactersListLocationResponse?,
     @SerializedName("name")
-    val name: String,
+    val name: String?,
     @SerializedName("origin")
-    val origin: CharactersListOriginResponse,
+    val origin: CharactersListOriginResponse?,
     @SerializedName("species")
-    val species: String,
+    val species: String?,
     @SerializedName("status")
-    val status: String,
+    val status: String?,
     @SerializedName("type")
-    val type: String,
+    val type: String?,
     @SerializedName("url")
-    val url: String
+    val url: String?
 )
 
 data class CharactersListLocationResponse(
     @SerializedName("name")
-    val name: String,
+    val name: String?,
     @SerializedName("url")
-    val url: String
+    val url: String?
 )
 
 data class CharactersListOriginResponse(
     @SerializedName("name")
-    val name: String,
+    val name: String?,
     @SerializedName("url")
-    val url: String
+    val url: String?
 )

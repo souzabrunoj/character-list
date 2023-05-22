@@ -5,15 +5,15 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import br.com.souzabrunoj.characterslist.data.list.response.CharactersListResultResponse
 import br.com.souzabrunoj.characterslist.databinding.ItemCharacterListBinding
+import br.com.souzabrunoj.characterslist.domain.data.list.CharactersListResult
 import br.com.souzabrunoj.characterslist.ui.utils.loadImage
 
-private typealias OnClick = (CharactersListResultResponse) -> Unit
+private typealias OnClick = (CharactersListResult) -> Unit
 
 class CharacterPagingAdapter(
     private val onClick: OnClick
-) : PagingDataAdapter<CharactersListResultResponse,
+) : PagingDataAdapter<CharactersListResult,
         CharacterPagingAdapter.CharacterPagingAdapterViewHolder>(CharacterComparator) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterPagingAdapterViewHolder {
@@ -31,7 +31,7 @@ class CharacterPagingAdapter(
     inner class CharacterPagingAdapterViewHolder(
         private val binding: ItemCharacterListBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun setupItem(item: CharactersListResultResponse) {
+        fun setupItem(item: CharactersListResult) {
             binding.apply {
                 ivCharacterImageItemList.loadImage(item.image)
                 tvCharacterNameItemList.text = item.name
@@ -41,15 +41,15 @@ class CharacterPagingAdapter(
         }
     }
 
-    object CharacterComparator : DiffUtil.ItemCallback<CharactersListResultResponse>() {
+    object CharacterComparator : DiffUtil.ItemCallback<CharactersListResult>() {
         override fun areItemsTheSame(
-            oldItem: CharactersListResultResponse, newItem: CharactersListResultResponse
+            oldItem: CharactersListResult, newItem: CharactersListResult
         ): Boolean {
             return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(
-            oldItem: CharactersListResultResponse, newItem: CharactersListResultResponse
+            oldItem: CharactersListResult, newItem: CharactersListResult
         ): Boolean {
             return oldItem == newItem
         }

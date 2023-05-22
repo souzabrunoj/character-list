@@ -1,38 +1,38 @@
-package br.com.souzabrunoj.characterslist.domain.data
+package br.com.souzabrunoj.characterslist.domain.data.list
 
-data class Characters(
-    val info: Info,
-    val results: List<Result>
+data class CharactersList(
+    val info: CharactersListInfo,
+    val results: List<CharactersListResult>
 )
 
-data class Info(
+data class CharactersListInfo(
     val count: Int,
     val next: String,
     val pages: Int,
     val prev: String
 )
 
-data class Result(
+data class CharactersListResult(
     val created: String,
     val episode: List<String>,
     val gender: String,
     val id: Int,
     val image: String,
-    val location: Location,
+    val location: CharactersListLocation,
     val name: String,
-    val origin: Origin,
+    val origin: CharactersListOrigin,
     val species: String,
     val status: String,
     val type: String,
     val url: String
 )
 
-data class Location(
+data class CharactersListLocation(
     val name: String,
     val url: String
 )
 
-data class Origin(
+data class CharactersListOrigin(
     val name: String,
     val url: String
 )
