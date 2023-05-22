@@ -1,8 +1,8 @@
 package br.com.souzabrunoj.characterslist.domain.repository.details
 
-import br.com.souzabrunoj.characterslist.data.details.response.CharacterDetailsResponse
+import br.com.souzabrunoj.characterslist.domain.data.details.CharacterDetails
 
 interface CharacterDetailsRepository {
 
-    suspend fun getCharacterDetails(characterId: Int): CharacterDetailsResponse
+    suspend fun getCharacterDetails(characterId: Int): CharacterDetails
 }

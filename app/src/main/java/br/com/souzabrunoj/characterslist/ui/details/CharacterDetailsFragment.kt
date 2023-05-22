@@ -8,8 +8,8 @@ import androidx.browser.customtabs.CustomTabsIntent
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import br.com.souzabrunoj.characterslist.R
-import br.com.souzabrunoj.characterslist.data.details.response.CharacterDetailsResponse
 import br.com.souzabrunoj.characterslist.databinding.FragmentCharacterDetailsBinding
+import br.com.souzabrunoj.characterslist.domain.data.details.CharacterDetails
 import br.com.souzabrunoj.characterslist.presentation.viewModel.CharacterDetailsViewModel
 import br.com.souzabrunoj.characterslist.ui.details.adapter.CharacterEpisodesAdapter
 import br.com.souzabrunoj.characterslist.ui.utils.loadImage
@@ -39,7 +39,7 @@ class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
         (activity as AppCompatActivity).supportActionBar?.title = args.characterName
     }
 
-    private fun setupCharacter(character: CharacterDetailsResponse) {
+    private fun setupCharacter(character: CharacterDetails) {
         binding.apply {
             with(character) {
                 ivCharacterImage.loadImage(image)
