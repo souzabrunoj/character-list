@@ -1,56 +1,63 @@
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.api.initialization.dsl.ScriptHandler.CLASSPATH_CONFIGURATION
 
-private const val CONFIGURATION_NAME = "implementation"
+private const val IMPLEMENTATION_CONFIGURATION_NAME = "implementation"
+private const val KAPT_CONFIGURATION_NAME = "kapt"
 private const val ANDROID_TESTE_CONFIGURATION_NAME = "androidTestImplementation"
 private const val TESTE_CONFIGURATION_NAME = "testImplementation"
 private const val ANDROID_UTLIS_CONFIGURATION_NAME = "androidTestUtil"
 
 fun DependencyHandler.kotlinDependencies() {
-    add(CONFIGURATION_NAME, "androidx.core:core-ktx:${Versions.coreKtxVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME, "androidx.core:core-ktx:${Versions.coreKtxVersion}")
 }
 
 fun DependencyHandler.lifecycleRuntimeDependencies() {
-    add(CONFIGURATION_NAME, "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntimeVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME, "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntimeVersion}")
 }
 
 fun DependencyHandler.constraintLayoutImplementation() {
-    add(CONFIGURATION_NAME, "androidx.constraintlayout:constraintlayout:${Versions.constraintLayoutVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME, "androidx.constraintlayout:constraintlayout:${Versions.constraintLayoutVersion}")
 }
 
 fun DependencyHandler.materialImplementation() {
-    add(CONFIGURATION_NAME, "com.google.android.material:material:${Versions.materialtVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME, "com.google.android.material:material:${Versions.materialtVersion}")
 }
 
 fun DependencyHandler.koinImplementation() {
-    add(CONFIGURATION_NAME, "io.insert-koin:koin-android:${Versions.koinVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME, "io.insert-koin:koin-android:${Versions.koinVersion}")
 }
 
 fun DependencyHandler.picassoImplementation() {
-    add(CONFIGURATION_NAME, "com.squareup.picasso:picasso:${Versions.picassoVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME, "com.squareup.picasso:picasso:${Versions.picassoVersion}")
 }
 fun DependencyHandler.annotationImplementation() {
-    add(CONFIGURATION_NAME, "androidx.annotation:annotation:${Versions.annotationVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME, "androidx.annotation:annotation:${Versions.annotationVersion}")
 }
 
 fun DependencyHandler.customTabImplementation() {
-    add(CONFIGURATION_NAME, "com.android.support:customtabs:${Versions.customTabVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME, "com.android.support:customtabs:${Versions.customTabVersion}")
 }
 fun DependencyHandler.pagingImplementation() {
-    add(CONFIGURATION_NAME, "androidx.paging:paging-runtime:${Versions.pagingVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME, "androidx.paging:paging-runtime:${Versions.pagingVersion}")
+}
+
+fun DependencyHandler.roomImplementation() {
+    add(IMPLEMENTATION_CONFIGURATION_NAME,"androidx.room:room-runtime:${Versions.roomVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME,"androidx.room:room-ktx:${Versions.roomVersion}")
+    add(KAPT_CONFIGURATION_NAME, "androidx.room:room-compiler:${Versions.roomVersion}")
 }
 
 fun DependencyHandler.networkImplementation() {
-    add(CONFIGURATION_NAME,"com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}")
-    add(CONFIGURATION_NAME,"com.squareup.retrofit2:converter-gson:${Versions.retrofitVersion}")
-    add(CONFIGURATION_NAME,"com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofitCoroutinesVersion}")
-    add(CONFIGURATION_NAME,"com.squareup.okhttp3:logging-interceptor:${Versions.interceptorVersion}")
-    add(CONFIGURATION_NAME,"com.google.code.gson:gson:${Versions.gsonVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME,"com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME,"com.squareup.retrofit2:converter-gson:${Versions.retrofitVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME,"com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofitCoroutinesVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME,"com.squareup.okhttp3:logging-interceptor:${Versions.interceptorVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME,"com.google.code.gson:gson:${Versions.gsonVersion}")
 }
 
 fun DependencyHandler.navigationImplementation() {
-    add(CONFIGURATION_NAME, "androidx.navigation:navigation-fragment-ktx:${Versions.navigationVersion}")
-    add(CONFIGURATION_NAME, "androidx.navigation:navigation-ui-ktx:${Versions.navigationVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME, "androidx.navigation:navigation-fragment-ktx:${Versions.navigationVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME, "androidx.navigation:navigation-ui-ktx:${Versions.navigationVersion}")
 }
 
 fun DependencyHandler.projectUnitTestDependencies() {

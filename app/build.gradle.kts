@@ -86,6 +86,7 @@ dependencies {
     networkImplementation()
     customTabImplementation()
     pagingImplementation()
+    roomImplementation()
 
     projectAndroidTestImplementation()
     projectUnitTestDependencies()

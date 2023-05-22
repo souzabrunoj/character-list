@@ -14,6 +14,7 @@ object Versions {
     const val annotationVersion = "1.6.0"
     const val customTabVersion = "28.0.0"
     const val pagingVersion = "3.1.1"
+    const val roomVersion = "2.5.1"
 
     //Networking
     const val retrofitVersion = "2.6.1"
