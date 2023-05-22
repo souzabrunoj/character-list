@@ -14,11 +14,11 @@ data class CharacterDetailsResponse(
     @SerializedName("image")
     val image: String,
     @SerializedName("location")
-    val location: LocationResponse,
+    val location: LocationDetailsResponse,
     @SerializedName("name")
     val name: String,
     @SerializedName("origin")
-    val origin: OriginResponse,
+    val origin: OriginDetailsResponse,
     @SerializedName("species")
     val species: String,
     @SerializedName("status")
@@ -29,14 +29,14 @@ data class CharacterDetailsResponse(
     val url: String
 )
 
-data class LocationResponse(
+data class LocationDetailsResponse(
     @SerializedName("name")
     val name: String,
     @SerializedName("url")
     val url: String
 )
 
-data class OriginResponse(
+data class OriginDetailsResponse(
     @SerializedName("name")
     val name: String,
     @SerializedName("url")

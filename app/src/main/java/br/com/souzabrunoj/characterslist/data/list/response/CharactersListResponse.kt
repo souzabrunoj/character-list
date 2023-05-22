@@ -2,14 +2,14 @@ package br.com.souzabrunoj.characterslist.data.list.response
 
 import com.google.gson.annotations.SerializedName
 
-data class CharactersResponse(
+data class CharactersListResponse(
     @SerializedName("info")
-    val info: CharacterInfoResponse,
+    val info: CharactersListInfoResponse,
     @SerializedName("results")
-    val results: List<CharacterResultResponse>
+    val results: List<CharactersListResultResponse>
 )
 
-data class CharacterInfoResponse(
+data class CharactersListInfoResponse(
     @SerializedName("count")
     val count: Int,
     @SerializedName("next")
@@ -20,7 +20,7 @@ data class CharacterInfoResponse(
     val prev: String
 )
 
-data class CharacterResultResponse(
+data class CharactersListResultResponse(
     @SerializedName("created")
     val created: String,
     @SerializedName("episode")
@@ -32,11 +32,11 @@ data class CharacterResultResponse(
     @SerializedName("image")
     val image: String,
     @SerializedName("location")
-    val location: CharacterLocationResponse,
+    val location: CharactersListLocationResponse,
     @SerializedName("name")
     val name: String,
     @SerializedName("origin")
-    val origin: CharacterOriginResponse,
+    val origin: CharactersListOriginResponse,
     @SerializedName("species")
     val species: String,
     @SerializedName("status")
@@ -47,14 +47,14 @@ data class CharacterResultResponse(
     val url: String
 )
 
-data class CharacterLocationResponse(
+data class CharactersListLocationResponse(
     @SerializedName("name")
     val name: String,
     @SerializedName("url")
     val url: String
 )
 
-data class CharacterOriginResponse(
+data class CharactersListOriginResponse(
     @SerializedName("name")
     val name: String,
     @SerializedName("url")

@@ -5,15 +5,15 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import br.com.souzabrunoj.characterslist.data.list.response.CharacterResultResponse
+import br.com.souzabrunoj.characterslist.data.list.response.CharactersListResultResponse
 import br.com.souzabrunoj.characterslist.databinding.ItemCharacterListBinding
 import br.com.souzabrunoj.characterslist.ui.utils.loadImage
 
-private typealias OnClick = (CharacterResultResponse) -> Unit
+private typealias OnClick = (CharactersListResultResponse) -> Unit
 
 class CharacterPagingAdapter(
     private val onClick: OnClick
-) : PagingDataAdapter<CharacterResultResponse,
+) : PagingDataAdapter<CharactersListResultResponse,
         CharacterPagingAdapter.CharacterPagingAdapterViewHolder>(CharacterComparator) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterPagingAdapterViewHolder {
@@ -31,7 +31,7 @@ class CharacterPagingAdapter(
     inner class CharacterPagingAdapterViewHolder(
         private val binding: ItemCharacterListBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun setupItem(item: CharacterResultResponse) {
+        fun setupItem(item: CharactersListResultResponse) {
             binding.apply {
                 ivCharacterImageItemList.loadImage(item.image)
                 tvCharacterNameItemList.text = item.name
@@ -41,12 +41,16 @@ class CharacterPagingAdapter(
         }
     }
 
-    object CharacterComparator : DiffUtil.ItemCallback<CharacterResultResponse>() {
-        override fun areItemsTheSame(oldItem: CharacterResultResponse, newItem: CharacterResultResponse): Boolean {
+    object CharacterComparator : DiffUtil.ItemCallback<CharactersListResultResponse>() {
+        override fun areItemsTheSame(
+            oldItem: CharactersListResultResponse, newItem: CharactersListResultResponse
+        ): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: CharacterResultResponse, newItem: CharacterResultResponse): Boolean {
+        override fun areContentsTheSame(
+            oldItem: CharactersListResultResponse, newItem: CharactersListResultResponse
+        ): Boolean {
             return oldItem == newItem
         }
     }

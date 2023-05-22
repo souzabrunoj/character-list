@@ -7,7 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.souzabrunoj.characterslist.R
-import br.com.souzabrunoj.characterslist.data.list.response.CharacterResultResponse
+import br.com.souzabrunoj.characterslist.data.list.response.CharactersListResultResponse
 import br.com.souzabrunoj.characterslist.databinding.FragmentCharactersListBinding
 import br.com.souzabrunoj.characterslist.presentation.viewModel.CharactersListViewModel
 import br.com.souzabrunoj.characterslist.ui.list.adatper.CharacterLoadingStateAdapter
@@ -45,7 +45,7 @@ class CharactersListFragment : Fragment(R.layout.fragment_characters_list) {
         }
     }
 
-    private fun onItemClick(item: CharacterResultResponse) {
+    private fun onItemClick(item: CharactersListResultResponse) {
         navController.navigate(
             CharactersListFragmentDirections.actionFromCharacterListToCharacterDetailsFragment(item.id, item.name)
         )
