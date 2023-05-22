@@ -1,6 +1,7 @@
 package br.com.souzabrunoj.characterslist.ui.list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -42,6 +43,7 @@ class CharactersListFragment : Fragment(R.layout.fragment_characters_list) {
     private fun setupObservers() {
         viewModel.getCharacters().observe(viewLifecycleOwner) { characters ->
             pagingAdapter.submitData(lifecycle, characters)
+            Log.d("CHARACTERS ->", characters.toString())
         }
     }
 
