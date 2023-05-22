@@ -7,5 +7,6 @@
     <string name="character_species_string_format">Species: %s</string>
     <string name="location_string_format">Location: %s</string>
     <string name="episodes">Episodes:</string>
+    <string name="retry">Retry</string>
 
 </resources>

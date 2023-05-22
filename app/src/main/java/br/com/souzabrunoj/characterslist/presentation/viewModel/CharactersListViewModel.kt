@@ -1,24 +1,12 @@
 package br.com.souzabrunoj.characterslist.presentation.viewModel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.souzabrunoj.characterslist.data.list.response.CharacterResultResponse
-import br.com.souzabrunoj.characterslist.domain.repository.list.CharactersListRepository
-import kotlinx.coroutines.launch
+import androidx.paging.cachedIn
+import br.com.souzabrunoj.characterslist.domain.repository.list.CharactersPagingListRepository
 
-class CharactersListViewModel(private val repository: CharactersListRepository) : ViewModel() {
+class CharactersListViewModel(private val repositoryPaging: CharactersPagingListRepository) : ViewModel() {
 
-    private val characterMutableLiveData = MutableLiveData<List<CharacterResultResponse>>()
-    val characterLiveData: LiveData<List<CharacterResultResponse>> = characterMutableLiveData
+    fun getCharacters() = repositoryPaging.getCharactersList().cachedIn(viewModelScope)
 
-
-    fun getCharacters() {
-        viewModelScope.launch {
-            repository.getCharactersList().apply {
-                characterMutableLiveData.value = this.results
-            }
-        }
-    }
 }

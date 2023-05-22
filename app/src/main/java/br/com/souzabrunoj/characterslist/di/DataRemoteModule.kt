@@ -1,7 +1,7 @@
 package br.com.souzabrunoj.characterslist.di
 
-import br.com.souzabrunoj.characterslist.data.ServiceClientFactory
-import br.com.souzabrunoj.characterslist.data.ServiceClientFactory.createClient
+import br.com.souzabrunoj.characterslist.data.factory.ServiceClientFactory
+import br.com.souzabrunoj.characterslist.data.factory.ServiceClientFactory.createClient
 import br.com.souzabrunoj.characterslist.data.details.service.CharacterDetailsService
 import br.com.souzabrunoj.characterslist.data.list.service.CharactersListService
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
