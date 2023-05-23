@@ -1,6 +1,6 @@
 package br.com.souzabrunoj.characterslist.domain.paging
 
-import android.util.Log
+import android.annotation.SuppressLint
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import br.com.souzabrunoj.characterslist.data.list.service.CharactersListService
@@ -8,7 +8,7 @@ import br.com.souzabrunoj.characterslist.domain.data.list.CharactersListResult
 import br.com.souzabrunoj.characterslist.domain.data.list.toDomain
 
 private const val NUMBER_ONE = 1
-
+@SuppressLint("all")
 class CharacterPagingSource(
     private val service: CharactersListService
 ) : PagingSource<Int, CharactersListResult>() {
@@ -17,11 +17,10 @@ class CharacterPagingSource(
         return try {
             val position = params.key ?: NUMBER_ONE
             val response = service.getCharacterList(position).toDomain()
-            Log.d("CHARACTERS ->", response.toString())
             LoadResult.Page(
                 data = response.results,
                 prevKey = if (position == NUMBER_ONE) null else position.minus(NUMBER_ONE),
-                nextKey = if (position == response.pages) null else position.plus(NUMBER_ONE)
+                nextKey = if (position == response.totalPages) null else position.plus(NUMBER_ONE)
             )
         } catch (e: Exception) {
             LoadResult.Error(e)

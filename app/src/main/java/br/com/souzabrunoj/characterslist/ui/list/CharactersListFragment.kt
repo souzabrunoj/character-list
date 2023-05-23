@@ -25,6 +25,7 @@ class CharactersListFragment : Fragment(R.layout.fragment_characters_list) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        lifecycle.addObserver(viewModel)
         setupObservers()
         setupRecyclerView()
     }

@@ -44,6 +44,7 @@ fun DependencyHandler.pagingImplementation() {
 fun DependencyHandler.roomImplementation() {
     add(IMPLEMENTATION_CONFIGURATION_NAME,"androidx.room:room-runtime:${Versions.roomVersion}")
     add(IMPLEMENTATION_CONFIGURATION_NAME,"androidx.room:room-ktx:${Versions.roomVersion}")
+    add(IMPLEMENTATION_CONFIGURATION_NAME,"androidx.room:room-paging:${Versions.roomVersion}")
     add(KAPT_CONFIGURATION_NAME, "androidx.room:room-compiler:${Versions.roomVersion}")
 }
 

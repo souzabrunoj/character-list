@@ -12,12 +12,8 @@ data class CharactersListResponse(
 data class CharactersListInfoResponse(
     @SerializedName("count")
     val count: Int?,
-    @SerializedName("next")
-    val next: String?,
     @SerializedName("pages")
-    val pages: Int?,
-    @SerializedName("prev")
-    val prev: String?
+    val totalPages: Int?,
 )
 
 data class CharactersListResultResponse(

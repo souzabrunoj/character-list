@@ -20,4 +20,15 @@
         tools:itemCount="10"
         tools:listitem="@layout/item_character_list" />
 
+    <include
+        android:id="@+id/i_loading"
+        layout="@layout/item_loading"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:visibility="visible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package br.com.souzabrunoj.characterslist.base
 
 import android.app.Application
+import br.com.souzabrunoj.characterslist.di.dataLocalModule
 import br.com.souzabrunoj.characterslist.di.dataRemoteModule
 import br.com.souzabrunoj.characterslist.di.domainModule
 import br.com.souzabrunoj.characterslist.di.presentationModule
@@ -19,7 +20,8 @@ class App : Application() {
                 listOf(
                     presentationModule,
                     domainModule,
-                    dataRemoteModule
+                    dataRemoteModule,
+                    dataLocalModule
                 )
             )
         }

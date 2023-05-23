@@ -8,5 +8,5 @@ import org.koin.dsl.module
 
 val domainModule = module {
     factory<CharacterDetailsRepository> { CharacterDetailsRepositoryImpl(get()) }
-    factory<CharactersPagingListRepository> { CharactersPagingListRepositoryImpl(get()) }
+    factory<CharactersPagingListRepository> { CharactersPagingListRepositoryImpl(get(), get() ) }
 }

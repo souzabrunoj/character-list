@@ -6,7 +6,7 @@ import br.com.souzabrunoj.characterslist.domain.utlis.ZERO
 
 fun CharactersListResponse.toDomain() = CharactersList(
     count = this.info?.count ?: ZERO,
-    pages = this.info?.pages ?: ZERO,
+    totalPages = this.info?.totalPages ?: ZERO,
     results = results?.map { it.toDomain() } ?: listOf()
 )
 
