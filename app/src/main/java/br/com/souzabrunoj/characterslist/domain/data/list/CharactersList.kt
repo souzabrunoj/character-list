@@ -15,4 +15,5 @@ data class CharactersListResult(
     val id: Int,
     val image: String,
     val name: String,
+    val status: String,
 )

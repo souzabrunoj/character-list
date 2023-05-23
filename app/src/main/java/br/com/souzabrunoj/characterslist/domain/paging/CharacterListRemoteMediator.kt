@@ -13,6 +13,8 @@ import br.com.souzabrunoj.characterslist.domain.data.list.toDomain
 
 @ExperimentalPagingApi
 class CharacterListRemoteMediator(
+    private val name: String,
+    private val status: String,
     private val dataRemote: CharactersListService,
     private val dataLocal: CharacterListDataBase
 ) : RemoteMediator<Int, CharactersListResult>() {
@@ -45,7 +47,7 @@ class CharacterListRemoteMediator(
                     nextPage
                 }
             }
-            val response = dataRemote.getCharacterList(currentPage).toDomain()
+            val response = dataRemote.getCharacterList(page = currentPage, name = name, status = status).toDomain()
             val endOfPagination = response.totalPages == currentPage
 
             val prevPage = if (currentPage == 1) null else currentPage.minus(1)

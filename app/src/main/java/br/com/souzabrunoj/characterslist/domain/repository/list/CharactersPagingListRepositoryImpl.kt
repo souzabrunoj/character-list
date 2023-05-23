@@ -16,15 +16,21 @@ private const val PRE_FETCH = 100
 
 @OptIn(ExperimentalPagingApi::class)
 class CharactersPagingListRepositoryImpl(
+    private val name: String,
+    private val status: String,
     private val dataRemote: CharactersListService,
     private val dataLocal: CharacterListDataBase
 ) : CharactersPagingListRepository {
     override fun getCharactersList(): LiveData<PagingData<CharactersListResult>> {
         return Pager(
             config = PagingConfig(PAGING_SIZE, PRE_FETCH),
-            remoteMediator = CharacterListRemoteMediator(dataRemote, dataLocal),
+            remoteMediator = CharacterListRemoteMediator(name, status, dataRemote, dataLocal),
             pagingSourceFactory = {
-                dataLocal.charactersDao().getCharacters()
+                when {
+                    name.isNotEmpty() -> dataLocal.charactersDao().getCharactersWithNameFilter(name)
+                    status.isNotEmpty() -> dataLocal.charactersDao().getCharactersWithStatusFilter(status)
+                    else -> dataLocal.charactersDao().getCharacters()
+                }
             }
         ).liveData
     }

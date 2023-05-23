@@ -13,6 +13,12 @@ interface CharacterResultDao {
     @Query("SELECT * FROM character")
     fun getCharacters(): PagingSource<Int, CharactersListResult>
 
+    @Query("SELECT * FROM character WHERE name=:name")
+    fun getCharactersWithNameFilter(name: String): PagingSource<Int, CharactersListResult>
+
+    @Query("SELECT * FROM character WHERE name=:status")
+    fun getCharactersWithStatusFilter(status: String): PagingSource<Int, CharactersListResult>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addCharacters(characters: List<CharactersListResult>)
 

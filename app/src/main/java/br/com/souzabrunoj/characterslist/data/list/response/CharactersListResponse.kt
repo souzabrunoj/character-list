@@ -23,5 +23,7 @@ data class CharactersListResultResponse(
     val image: String?,
     @SerializedName("name")
     val name: String?,
+    @SerializedName("status")
+    val status: String?,
 )
 

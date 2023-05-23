@@ -14,4 +14,5 @@ fun CharactersListResultResponse?.toDomain() = CharactersListResult(
     id = this?.id ?: ZERO,
     image = this?.image.orEmpty(),
     name = this?.name.orEmpty(),
+    status = this?.status.orEmpty()
 )

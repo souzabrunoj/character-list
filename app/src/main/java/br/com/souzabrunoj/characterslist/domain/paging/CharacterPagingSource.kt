@@ -16,7 +16,7 @@ class CharacterPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, CharactersListResult> {
         return try {
             val position = params.key ?: NUMBER_ONE
-            val response = service.getCharacterList(position).toDomain()
+            val response = service.getCharacterList(position, "", "").toDomain()
             LoadResult.Page(
                 data = response.results,
                 prevKey = if (position == NUMBER_ONE) null else position.minus(NUMBER_ONE),
