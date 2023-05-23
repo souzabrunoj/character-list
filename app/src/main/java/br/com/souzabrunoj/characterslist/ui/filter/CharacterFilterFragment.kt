@@ -1,8 +1,8 @@
 package br.com.souzabrunoj.characterslist.ui.filter
 
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import br.com.souzabrunoj.characterslist.R
@@ -27,8 +27,8 @@ class CharacterFilterFragment : Fragment(R.layout.fragment_character_filter) {
     private fun setListeners() {
         binding.btSubmitFilter.setOnClickListener { applyFilter() }
 
-        binding.btSubmitFilter.setOnKeyListener { _, keyCode, event ->
-            if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
+        binding.input.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE)  {
                 applyFilter()
                 true
             } else {
