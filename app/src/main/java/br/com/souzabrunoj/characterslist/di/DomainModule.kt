@@ -9,7 +9,7 @@ import org.koin.dsl.module
 val domainModule = module {
     factory<CharacterDetailsRepository> { CharacterDetailsRepositoryImpl(get()) }
 
-    factory<CharactersPagingListRepository> { (name: String, status: String) ->
-        CharactersPagingListRepositoryImpl(dataRemote = get(), dataLocal = get(), name = name, status = status)
+    factory<CharactersPagingListRepository> {
+        CharactersPagingListRepositoryImpl(dataRemote = get(), dataLocal = get())
     }
 }

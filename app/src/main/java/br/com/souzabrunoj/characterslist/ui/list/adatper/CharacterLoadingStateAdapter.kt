@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.souzabrunoj.characterslist.databinding.ItemCharacterLoadingStateFooterBinding
 
 class CharacterLoadingStateAdapter(
-    private val retry: () -> Unit
+    private val adapter: CharacterPagingAdapter
 ) : LoadStateAdapter<CharacterLoadingStateAdapter.CharacterLoadingStateViewHolder>() {
 
 
@@ -34,7 +34,7 @@ class CharacterLoadingStateAdapter(
             binding.progressBar.isVisible = loadState is LoadState.Loading
             binding.retryButton.isVisible = loadState is LoadState.Error
             binding.errorMsg.isVisible = loadState is LoadState.Error
-            binding.retryButton.setOnClickListener { retry.invoke() }
+            binding.retryButton.setOnClickListener { adapter.retry() }
         }
     }
 }

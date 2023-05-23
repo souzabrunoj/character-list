@@ -8,5 +8,9 @@
     <string name="location_string_format">Location: %s</string>
     <string name="episodes">Episodes:</string>
     <string name="retry">Retry</string>
-
+    <string name="search_hint">Name</string>
+    <string name="filter">Filter</string>
+    <string name="alive">Alive</string>
+    <string name="dead">Dead</string>
+    <string name="unknown">Unknown</string>
 </resources>

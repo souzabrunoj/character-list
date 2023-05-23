@@ -1,7 +1,6 @@
 package br.com.souzabrunoj.characterslist.presentation.viewModel
 
 import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,12 +10,18 @@ import br.com.souzabrunoj.characterslist.domain.utlis.EMPTY_STRING
 
 class CharactersListViewModel(private val repositoryPaging: CharactersPagingListRepository) : ViewModel(), LifecycleObserver {
 
-    private val nameFilterMutableLiveData = MutableLiveData(EMPTY_STRING)
-    val nameFilterLiveData: LiveData<String> = nameFilterMutableLiveData
 
-    private val statusFilterMutableLiveData = MutableLiveData(EMPTY_STRING)
-    val statusFilterLiveData: LiveData<String> = statusFilterMutableLiveData
+    private var nameFilter = EMPTY_STRING
+    private var statusFilter = EMPTY_STRING
+    private val filterMutableLiveData = MutableLiveData<Unit>()
+    val filterLiveData: MutableLiveData<Unit> = filterMutableLiveData
 
-    fun getCharacters() = repositoryPaging.getCharactersList().cachedIn(viewModelScope)
+    fun getCharacters() = repositoryPaging.getCharactersList(nameFilter, statusFilter).cachedIn(viewModelScope)
+
+    fun updateFilter(name: String = EMPTY_STRING, status: String = EMPTY_STRING) {
+        nameFilter = name
+        statusFilter = status
+        filterMutableLiveData.value = Unit
+    }
 }
 

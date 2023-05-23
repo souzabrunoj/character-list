@@ -6,5 +6,5 @@ import br.com.souzabrunoj.characterslist.domain.data.list.CharactersListResult
 
 interface CharactersPagingListRepository {
 
-    fun getCharactersList(): LiveData<PagingData<CharactersListResult>>
+    fun getCharactersList(name: String, status: String): LiveData<PagingData<CharactersListResult>>
 }

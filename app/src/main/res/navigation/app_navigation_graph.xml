@@ -19,12 +19,20 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
+        <action
+            android:id="@+id/action_from_character_list_to_character_filter_fragment"
+            app:destination="@id/character_filter_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
     </fragment>
 
     <fragment
         android:id="@+id/character_details_fragment"
         android:name="br.com.souzabrunoj.characterslist.ui.details.CharacterDetailsFragment"
-        android:label="CharacterDetailsFragment"
+        android:label="Character Details Fragment"
         tools:layout="@layout/fragment_character_details">
 
         <argument
@@ -36,5 +44,11 @@
             app:argType="string" />
 
     </fragment>
+
+    <fragment
+        android:id="@+id/character_filter_fragment"
+        android:name="br.com.souzabrunoj.characterslist.ui.filter.CharacterFilterFragment"
+        android:label="Character Filter"
+        tools:layout="@layout/fragment_character_filter"/>
 
 </navigation>
