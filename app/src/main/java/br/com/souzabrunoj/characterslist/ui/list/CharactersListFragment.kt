@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.souzabrunoj.characterslist.R
 import br.com.souzabrunoj.characterslist.databinding.FragmentCharactersListBinding
 import br.com.souzabrunoj.characterslist.domain.data.list.CharactersListResult
+import br.com.souzabrunoj.characterslist.domain.utlis.ZERO
 import br.com.souzabrunoj.characterslist.presentation.viewModel.CharactersListViewModel
 import br.com.souzabrunoj.characterslist.ui.list.adatper.CharacterLoadingStateAdapter
 import br.com.souzabrunoj.characterslist.ui.list.adatper.CharacterPagingAdapter
@@ -60,7 +61,7 @@ class CharactersListFragment : Fragment(R.layout.fragment_characters_list) {
                 pagingAdapter.loadStateFlow.collectLatest { loadStates ->
                     showEmptyState(loadStates.refresh is LoadState.Error)
                     showLoadingState(
-                        loadStates.refresh is LoadState.Loading && pagingAdapter.itemCount == 0
+                        loadStates.refresh is LoadState.Loading && pagingAdapter.itemCount == ZERO
                     )
                 }
             }
