@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Margins -->
+    <dimen name="margin_big">60dp</dimen>
     <dimen name="margin_medium">24dp</dimen>
     <dimen name="margin_small">16dp</dimen>
     <dimen name="margin_xsmall">16dp</dimen>

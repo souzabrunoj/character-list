@@ -4,5 +4,5 @@ import br.com.souzabrunoj.characterslist.domain.data.details.CharacterDetails
 
 interface CharacterDetailsRepository {
 
-    suspend fun getCharacterDetails(characterId: Int): CharacterDetails
+    suspend fun getCharacterDetails(characterId: Int): Result<CharacterDetails>
 }

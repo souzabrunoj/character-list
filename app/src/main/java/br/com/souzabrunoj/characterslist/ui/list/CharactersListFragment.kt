@@ -56,14 +56,12 @@ class CharactersListFragment : Fragment(R.layout.fragment_characters_list) {
     }
 
     private fun setOnLoadStateInList() {
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.CREATED) {
-                pagingAdapter.loadStateFlow.collectLatest { loadStates ->
-                    showEmptyState(loadStates.refresh is LoadState.Error)
-                    showLoadingState(
-                        loadStates.refresh is LoadState.Loading && pagingAdapter.itemCount == ZERO
-                    )
-                }
+        viewLifecycleOwner.lifecycleScope.launch {
+            pagingAdapter.loadStateFlow.collectLatest { loadStates ->
+                showEmptyState(loadStates.refresh is LoadState.Error)
+                showLoadingState(
+                    loadStates.refresh is LoadState.Loading && pagingAdapter.itemCount == ZERO
+                )
             }
         }
 

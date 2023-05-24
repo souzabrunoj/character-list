@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import br.com.souzabrunoj.characterslist.R
@@ -30,8 +31,21 @@ class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
     }
 
     private fun addObservers() {
-        viewModel.characterLiveData.observe(viewLifecycleOwner) { character ->
+        viewModel.character.observe(viewLifecycleOwner) { character ->
+            binding.clContainerView.isVisible = true
             setupCharacter(character)
+        }
+
+        viewModel.error.observe(viewLifecycleOwner) { error ->
+            binding.tvErrorMassage.isVisible = true
+            binding.clContainerView.isVisible = false
+        }
+
+        viewModel.loading.observe(viewLifecycleOwner) { isLoading ->
+            with(binding) {
+                iLoading.root.isVisible = isLoading
+                clContainerView.isVisible = !isLoading
+            }
         }
     }
 
