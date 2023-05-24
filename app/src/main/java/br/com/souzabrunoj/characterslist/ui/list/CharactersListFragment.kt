@@ -90,7 +90,7 @@ class CharactersListFragment : Fragment(R.layout.fragment_characters_list) {
             pagingAdapter.submitData(lifecycle, characters)
         }
 
-        viewModel.filterLiveData.observe(viewLifecycleOwner) {
+        viewModel.filter.observe(viewLifecycleOwner) {
             viewModel.getCharacters()
         }
     }

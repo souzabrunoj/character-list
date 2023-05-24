@@ -13,15 +13,15 @@ class CharactersListViewModel(private val repositoryPaging: CharactersPagingList
 
     private var nameFilter = EMPTY_STRING
     private var statusFilter = EMPTY_STRING
-    private val filterMutableLiveData = MutableLiveData<Unit>()
-    val filterLiveData: MutableLiveData<Unit> = filterMutableLiveData
+    private val _filter = MutableLiveData<Unit>()
+    val filter: MutableLiveData<Unit> = _filter
 
     fun getCharacters() = repositoryPaging.getCharactersList(nameFilter, statusFilter).cachedIn(viewModelScope)
 
     fun updateFilter(name: String = EMPTY_STRING, status: String = EMPTY_STRING) {
         nameFilter = name
         statusFilter = status
-        filterMutableLiveData.value = Unit
+        _filter.value = Unit
     }
 }
 
