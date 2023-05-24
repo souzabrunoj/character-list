@@ -9,6 +9,7 @@ import br.com.souzabrunoj.characterslist.R
 import br.com.souzabrunoj.characterslist.databinding.FragmentCharacterFilterBinding
 import br.com.souzabrunoj.characterslist.domain.utlis.EMPTY_STRING
 import br.com.souzabrunoj.characterslist.presentation.viewModel.CharactersListViewModel
+import br.com.souzabrunoj.characterslist.ui.utils.capitalize
 import br.com.souzabrunoj.characterslist.ui.utils.viewBinding
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
@@ -28,7 +29,7 @@ class CharacterFilterFragment : Fragment(R.layout.fragment_character_filter) {
         binding.btSubmitFilter.setOnClickListener { applyFilter() }
 
         binding.input.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_DONE)  {
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
                 applyFilter()
                 true
             } else {
@@ -48,7 +49,7 @@ class CharacterFilterFragment : Fragment(R.layout.fragment_character_filter) {
 
     private fun applyFilter() {
         viewModel.updateFilter(
-            name = binding.input.text.toString(),
+            name = binding.input.text.toString().capitalize(),
             status = getFilter()
         )
         findNavController().popBackStack()
