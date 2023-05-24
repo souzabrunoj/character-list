@@ -1,6 +1,6 @@
-package br.com.souzabrunoj.characterslist.data.list.service
+package br.com.souzabrunoj.characterslist.dataRemote.list.service
 
-import br.com.souzabrunoj.characterslist.data.list.response.CharactersListResponse
+import br.com.souzabrunoj.characterslist.dataRemote.list.response.CharactersListResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

@@ -1,4 +1,4 @@
-package br.com.souzabrunoj.characterslist.data
+package br.com.souzabrunoj.characterslist.dataRemote
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

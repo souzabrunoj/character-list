@@ -1,7 +1,7 @@
 package br.com.souzabrunoj.characterslist.domain.data.list
 
-import br.com.souzabrunoj.characterslist.data.list.response.CharactersListResponse
-import br.com.souzabrunoj.characterslist.data.list.response.CharactersListResultResponse
+import br.com.souzabrunoj.characterslist.dataRemote.list.response.CharactersListResponse
+import br.com.souzabrunoj.characterslist.dataRemote.list.response.CharactersListResultResponse
 import br.com.souzabrunoj.characterslist.domain.utlis.ZERO
 
 fun CharactersListResponse.toDomain() = CharactersList(

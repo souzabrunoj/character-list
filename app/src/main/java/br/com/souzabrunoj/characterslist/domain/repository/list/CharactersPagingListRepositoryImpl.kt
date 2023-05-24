@@ -6,7 +6,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.liveData
-import br.com.souzabrunoj.characterslist.data.list.service.CharactersListService
+import br.com.souzabrunoj.characterslist.dataRemote.list.service.CharactersListService
 import br.com.souzabrunoj.characterslist.dataLocal.dataBase.CharacterListDataBase
 import br.com.souzabrunoj.characterslist.domain.data.list.CharactersListResult
 import br.com.souzabrunoj.characterslist.domain.paging.CharacterListRemoteMediator

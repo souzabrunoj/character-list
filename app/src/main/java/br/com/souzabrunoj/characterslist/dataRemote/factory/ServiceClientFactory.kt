@@ -1,4 +1,4 @@
-package br.com.souzabrunoj.characterslist.data.factory
+package br.com.souzabrunoj.characterslist.dataRemote.factory
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient

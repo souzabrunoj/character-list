@@ -1,9 +1,9 @@
 package br.com.souzabrunoj.characterslist.di
 
-import br.com.souzabrunoj.characterslist.data.factory.ServiceClientFactory
-import br.com.souzabrunoj.characterslist.data.factory.ServiceClientFactory.createClient
-import br.com.souzabrunoj.characterslist.data.details.service.CharacterDetailsService
-import br.com.souzabrunoj.characterslist.data.list.service.CharactersListService
+import br.com.souzabrunoj.characterslist.dataRemote.factory.ServiceClientFactory
+import br.com.souzabrunoj.characterslist.dataRemote.factory.ServiceClientFactory.createClient
+import br.com.souzabrunoj.characterslist.dataRemote.details.service.CharacterDetailsService
+import br.com.souzabrunoj.characterslist.dataRemote.list.service.CharactersListService
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import org.koin.dsl.module
 

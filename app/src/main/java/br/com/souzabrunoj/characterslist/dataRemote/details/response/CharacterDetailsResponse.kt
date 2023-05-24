@@ -1,4 +1,4 @@
-package br.com.souzabrunoj.characterslist.data.details.response
+package br.com.souzabrunoj.characterslist.dataRemote.details.response
 
 import com.google.gson.annotations.SerializedName
 

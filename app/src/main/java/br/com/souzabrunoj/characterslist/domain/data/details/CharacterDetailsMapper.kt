@@ -1,8 +1,8 @@
 package br.com.souzabrunoj.characterslist.domain.data.details
 
-import br.com.souzabrunoj.characterslist.data.details.response.CharacterDetailsLocationDetailsResponse
-import br.com.souzabrunoj.characterslist.data.details.response.CharacterDetailsOriginDetailsResponse
-import br.com.souzabrunoj.characterslist.data.details.response.CharacterDetailsResponse
+import br.com.souzabrunoj.characterslist.dataRemote.details.response.CharacterDetailsLocationDetailsResponse
+import br.com.souzabrunoj.characterslist.dataRemote.details.response.CharacterDetailsOriginDetailsResponse
+import br.com.souzabrunoj.characterslist.dataRemote.details.response.CharacterDetailsResponse
 import br.com.souzabrunoj.characterslist.domain.utlis.ZERO
 
 fun CharacterDetailsResponse?.toDomain() = CharacterDetails(

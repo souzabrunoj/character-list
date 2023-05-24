@@ -5,7 +5,7 @@ import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
-import br.com.souzabrunoj.characterslist.data.list.service.CharactersListService
+import br.com.souzabrunoj.characterslist.dataRemote.list.service.CharactersListService
 import br.com.souzabrunoj.characterslist.dataLocal.CharacterRemoteKeysLocal
 import br.com.souzabrunoj.characterslist.dataLocal.dataBase.CharacterListDataBase
 import br.com.souzabrunoj.characterslist.domain.data.list.CharactersListResult

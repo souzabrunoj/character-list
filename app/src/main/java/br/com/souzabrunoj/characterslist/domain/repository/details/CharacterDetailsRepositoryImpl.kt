@@ -1,7 +1,7 @@
 package br.com.souzabrunoj.characterslist.domain.repository.details
 
-import br.com.souzabrunoj.characterslist.data.apiCall
-import br.com.souzabrunoj.characterslist.data.details.service.CharacterDetailsService
+import br.com.souzabrunoj.characterslist.dataRemote.apiCall
+import br.com.souzabrunoj.characterslist.dataRemote.details.service.CharacterDetailsService
 import br.com.souzabrunoj.characterslist.domain.data.details.CharacterDetails
 import br.com.souzabrunoj.characterslist.domain.data.details.toDomain
 
