@@ -6,6 +6,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.core.view.MenuProvider
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -22,6 +23,7 @@ import br.com.souzabrunoj.characterslist.presentation.viewModel.CharactersListVi
 import br.com.souzabrunoj.characterslist.ui.list.adatper.CharacterLoadingStateAdapter
 import br.com.souzabrunoj.characterslist.ui.list.adatper.CharacterPagingAdapter
 import br.com.souzabrunoj.characterslist.ui.utils.viewBinding
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.launch
@@ -55,12 +57,33 @@ class CharactersListFragment : Fragment(R.layout.fragment_characters_list) {
     private fun setOnLoadStateInList() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.CREATED) {
+                pagingAdapter.loadStateFlow.collectLatest { loadStates ->
+                    showEmptyState(loadStates.refresh is LoadState.Error)
+                    showLoadingState(
+                        loadStates.refresh is LoadState.Loading && pagingAdapter.itemCount == 0
+                    )
+                }
+            }
+        }
+
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.CREATED) {
                 pagingAdapter.loadStateFlow
                     .distinctUntilChangedBy { it.refresh }
                     .filter { it.refresh is LoadState.NotLoading }
                     .collect { binding.rvNextScreen.scrollToPosition(0) }
             }
         }
+    }
+
+    private fun showEmptyState(isShow: Boolean) {
+        binding.iEmptyState.errorMsg.isVisible = isShow
+        binding.iEmptyState.errorMsg.text = getString(R.string.search_not_result)
+        binding.iEmptyState.root.isVisible = isShow
+    }
+
+    private fun showLoadingState(isShow: Boolean) {
+        binding.iLoading.root.isVisible = isShow
     }
 
     private fun setupObservers() {
