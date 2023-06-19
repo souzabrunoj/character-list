@@ -1,7 +1,7 @@
 object Versions {
     // Kotlin
     const val kotlinVersion = "1.8.21"
-    const val gradlePluginVersion = "8.0.1"
+    const val gradlePluginVersion = "8.0.0"
     const val kotlinGradlePluginVersion = kotlinVersion
 
     const val coreKtxVersion = "1.9.0"
