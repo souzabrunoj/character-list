@@ -13,6 +13,7 @@ class CharactersListViewModel(private val repositoryPaging: CharactersPagingList
 
     private var nameFilter = EMPTY_STRING
     private var statusFilter = EMPTY_STRING
+
     private val _filter = MutableLiveData<Unit>()
     val filter: MutableLiveData<Unit> = _filter
 

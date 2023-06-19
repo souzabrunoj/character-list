@@ -66,6 +66,9 @@ fun DependencyHandler.projectUnitTestDependencies() {
     add(TESTE_CONFIGURATION_NAME,"org.robolectric:robolectric:${Versions.robolectricVersion}")
     add(TESTE_CONFIGURATION_NAME,"io.insert-koin:koin-test:${Versions.koinVersion}")
     add(TESTE_CONFIGURATION_NAME,"io.insert-koin:koin-test-junit4:${Versions.koinVersion}")
+    add(TESTE_CONFIGURATION_NAME,"io.mockk:mockk:${Versions.mockkVersion}")
+    add(TESTE_CONFIGURATION_NAME, "androidx.arch.core:core-testing:${Versions.archCoreTestVersion}")
+    add(TESTE_CONFIGURATION_NAME, "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesVersion}")
 }
 
 fun DependencyHandler.projectAndroidTestImplementation() {

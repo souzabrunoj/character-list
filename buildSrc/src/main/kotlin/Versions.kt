@@ -21,6 +21,7 @@ object Versions {
     const val retrofitCoroutinesVersion = "0.9.2"
     const val interceptorVersion = "4.1.0"
     const val gsonVersion = "2.9.0"
+    const val coroutinesVersion = "1.7.1"
 
     //Tools
     const val detektVersion = "1.22.0"
@@ -35,4 +36,6 @@ object Versions {
     const val espressoCoreVersion = "3.5.1"
     const val orchestratorVersion = "1.0.2"
     const val robolectricVersion = "3.7.1"
+    const val mockkVersion = "1.13.5"
+    const val archCoreTestVersion = "2.2.0"
 }
