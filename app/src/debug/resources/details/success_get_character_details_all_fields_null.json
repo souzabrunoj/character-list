@@ -1,0 +1,20 @@
+{
+  "id": null,
+  "name": null,
+  "status": null,
+  "species": null,
+  "type": null,
+  "gender": null,
+  "origin": {
+    "name": null,
+    "url": null
+  },
+  "location": {
+    "name": null,
+    "url": null
+  },
+  "image": null,
+  "episode": null,
+  "url": null,
+  "created": null
+}
