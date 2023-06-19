@@ -1,3 +1,5 @@
+package br.com.souzabrunoj.characterslist.domain.details
+
 import br.com.souzabrunoj.characterslist.dataRemote.details.response.CharacterDetailsResponse
 import br.com.souzabrunoj.characterslist.domain.data.details.CharacterDetails
 import br.com.souzabrunoj.characterslist.domain.data.details.toDomain
@@ -5,7 +7,7 @@ import org.junit.Test
 import utils.fromJson
 import kotlin.test.assertEquals
 
-class CharacterListMapperTest {
+class CharacterDetailsMapperTest {
 
     @Test
     fun `WHEN convert to domain layer MUST return correct values`() {
