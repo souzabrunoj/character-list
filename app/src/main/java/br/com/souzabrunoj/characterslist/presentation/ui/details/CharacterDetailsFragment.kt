@@ -1,4 +1,4 @@
-package br.com.souzabrunoj.characterslist.ui.details
+package br.com.souzabrunoj.characterslist.presentation.ui.details
 
 import android.net.Uri
 import android.os.Bundle
@@ -11,10 +11,10 @@ import androidx.navigation.fragment.navArgs
 import br.com.souzabrunoj.characterslist.R
 import br.com.souzabrunoj.characterslist.databinding.FragmentCharacterDetailsBinding
 import br.com.souzabrunoj.characterslist.domain.data.details.CharacterDetails
+import br.com.souzabrunoj.characterslist.presentation.ui.details.adapter.CharacterEpisodesAdapter
+import br.com.souzabrunoj.characterslist.presentation.ui.utils.loadImage
+import br.com.souzabrunoj.characterslist.presentation.ui.utils.viewBinding
 import br.com.souzabrunoj.characterslist.presentation.viewModel.CharacterDetailsViewModel
-import br.com.souzabrunoj.characterslist.ui.details.adapter.CharacterEpisodesAdapter
-import br.com.souzabrunoj.characterslist.ui.utils.loadImage
-import br.com.souzabrunoj.characterslist.ui.utils.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
@@ -36,7 +36,7 @@ class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
             setupCharacter(character)
         }
 
-        viewModel.error.observe(viewLifecycleOwner) { error ->
+        viewModel.error.observe(viewLifecycleOwner) {
             binding.tvErrorMassage.isVisible = true
             binding.clContainerView.isVisible = false
         }

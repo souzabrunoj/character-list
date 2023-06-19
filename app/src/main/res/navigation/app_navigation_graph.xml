@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/characters_list_fragment"
-        android:name="br.com.souzabrunoj.characterslist.ui.list.CharactersListFragment"
+        android:name="br.com.souzabrunoj.characterslist.presentation.ui.list.CharactersListFragment"
         android:label="Characters List"
         tools:layout="@layout/fragment_characters_list">
 
@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/character_details_fragment"
-        android:name="br.com.souzabrunoj.characterslist.ui.details.CharacterDetailsFragment"
+        android:name="br.com.souzabrunoj.characterslist.presentation.ui.details.CharacterDetailsFragment"
         android:label="Character Details Fragment"
         tools:layout="@layout/fragment_character_details">
 
@@ -47,7 +47,7 @@
 
     <fragment
         android:id="@+id/character_filter_fragment"
-        android:name="br.com.souzabrunoj.characterslist.ui.filter.CharacterFilterFragment"
+        android:name="br.com.souzabrunoj.characterslist.presentation.ui.filter.CharacterFilterFragment"
         android:label="Character Filter"
         tools:layout="@layout/fragment_character_filter"/>
 

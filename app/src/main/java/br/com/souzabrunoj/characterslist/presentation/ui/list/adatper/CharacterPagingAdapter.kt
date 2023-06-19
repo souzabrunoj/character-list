@@ -1,4 +1,4 @@
-package br.com.souzabrunoj.characterslist.ui.list.adatper
+package br.com.souzabrunoj.characterslist.presentation.ui.list.adatper
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import br.com.souzabrunoj.characterslist.databinding.ItemCharacterListBinding
 import br.com.souzabrunoj.characterslist.domain.data.list.CharactersListResult
-import br.com.souzabrunoj.characterslist.ui.utils.loadImage
+import br.com.souzabrunoj.characterslist.presentation.ui.utils.loadImage
 
 private typealias OnClick = (CharactersListResult) -> Unit
 

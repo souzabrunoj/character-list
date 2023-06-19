@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="visible"
-            tools:context=".ui.details.CharacterDetailsFragment">
+            tools:context=".presentation.ui.details.CharacterDetailsFragment">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_character_image"

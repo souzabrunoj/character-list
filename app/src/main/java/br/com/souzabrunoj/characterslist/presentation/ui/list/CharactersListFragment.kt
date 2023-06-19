@@ -1,4 +1,4 @@
-package br.com.souzabrunoj.characterslist.ui.list
+package br.com.souzabrunoj.characterslist.presentation.ui.list
 
 import android.os.Bundle
 import android.view.Menu
@@ -20,10 +20,10 @@ import br.com.souzabrunoj.characterslist.R
 import br.com.souzabrunoj.characterslist.databinding.FragmentCharactersListBinding
 import br.com.souzabrunoj.characterslist.domain.data.list.CharactersListResult
 import br.com.souzabrunoj.characterslist.domain.utlis.ZERO
+import br.com.souzabrunoj.characterslist.presentation.ui.list.adatper.CharacterLoadingStateAdapter
+import br.com.souzabrunoj.characterslist.presentation.ui.list.adatper.CharacterPagingAdapter
+import br.com.souzabrunoj.characterslist.presentation.ui.utils.viewBinding
 import br.com.souzabrunoj.characterslist.presentation.viewModel.CharactersListViewModel
-import br.com.souzabrunoj.characterslist.ui.list.adatper.CharacterLoadingStateAdapter
-import br.com.souzabrunoj.characterslist.ui.list.adatper.CharacterPagingAdapter
-import br.com.souzabrunoj.characterslist.ui.utils.viewBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.filter
@@ -97,7 +97,10 @@ class CharactersListFragment : Fragment(R.layout.fragment_characters_list) {
 
     private fun onItemClick(item: CharactersListResult) {
         navController.navigate(
-            CharactersListFragmentDirections.actionFromCharacterListToCharacterDetailsFragment(item.id, item.name)
+            CharactersListFragmentDirections.actionFromCharacterListToCharacterDetailsFragment(
+                item.id,
+                item.name
+            )
         )
     }
 

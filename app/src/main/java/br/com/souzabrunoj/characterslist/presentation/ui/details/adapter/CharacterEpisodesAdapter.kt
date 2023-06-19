@@ -1,10 +1,10 @@
-package br.com.souzabrunoj.characterslist.ui.details.adapter
+package br.com.souzabrunoj.characterslist.presentation.ui.details.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.souzabrunoj.characterslist.databinding.ItemCharacterEpisodesBinding
-import br.com.souzabrunoj.characterslist.ui.utils.underline
+import br.com.souzabrunoj.characterslist.presentation.ui.utils.underline
 
 private typealias onItemClick = (String) -> Unit
 

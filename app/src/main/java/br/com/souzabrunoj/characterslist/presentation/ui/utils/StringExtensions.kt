@@ -1,4 +1,4 @@
-package br.com.souzabrunoj.characterslist.ui.utils
+package br.com.souzabrunoj.characterslist.presentation.ui.utils
 
 fun String.capitalize(): String {
     return split(' ')

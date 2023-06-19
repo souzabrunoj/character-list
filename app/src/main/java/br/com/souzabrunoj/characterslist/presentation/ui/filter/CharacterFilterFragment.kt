@@ -1,4 +1,4 @@
-package br.com.souzabrunoj.characterslist.ui.filter
+package br.com.souzabrunoj.characterslist.presentation.ui.filter
 
 import android.os.Bundle
 import android.view.View
@@ -9,8 +9,8 @@ import br.com.souzabrunoj.characterslist.R
 import br.com.souzabrunoj.characterslist.databinding.FragmentCharacterFilterBinding
 import br.com.souzabrunoj.characterslist.domain.utlis.EMPTY_STRING
 import br.com.souzabrunoj.characterslist.presentation.viewModel.CharactersListViewModel
-import br.com.souzabrunoj.characterslist.ui.utils.capitalize
-import br.com.souzabrunoj.characterslist.ui.utils.viewBinding
+import br.com.souzabrunoj.characterslist.presentation.ui.utils.capitalize
+import br.com.souzabrunoj.characterslist.presentation.ui.utils.viewBinding
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class CharacterFilterFragment : Fragment(R.layout.fragment_character_filter) {

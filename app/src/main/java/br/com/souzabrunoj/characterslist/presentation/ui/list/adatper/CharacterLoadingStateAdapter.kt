@@ -1,4 +1,4 @@
-package br.com.souzabrunoj.characterslist.ui.list.adatper
+package br.com.souzabrunoj.characterslist.presentation.ui.list.adatper
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

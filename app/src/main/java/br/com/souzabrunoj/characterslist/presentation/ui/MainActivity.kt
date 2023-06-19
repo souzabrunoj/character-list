@@ -1,4 +1,4 @@
-package br.com.souzabrunoj.characterslist.ui
+package br.com.souzabrunoj.characterslist.presentation.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
