@@ -19,7 +19,7 @@ class CharactersPagingListRepositoryImpl(
     private val dataRemote: CharactersListService,
     private val dataLocal: CharacterListDataBase
 ) : CharactersPagingListRepository {
-    override fun getCharactersList(name: String, status: String): LiveData<PagingData<CharactersListResult>> {
+    override fun getCharactersList(name: String, status: String): Pager<Int, CharactersListResult> {
         return Pager(
             config = PagingConfig(PAGING_SIZE, PRE_FETCH),
             remoteMediator = CharacterListRemoteMediator(name, status, dataRemote, dataLocal),
@@ -30,6 +30,6 @@ class CharactersPagingListRepositoryImpl(
                     else -> dataLocal.charactersDao().getCharacters()
                 }
             }
-        ).liveData
+        )
     }
 }

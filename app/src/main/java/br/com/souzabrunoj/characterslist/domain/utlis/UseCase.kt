@@ -12,7 +12,7 @@ abstract class UseCase<P, R>(private val scope: CoroutineScope) : KoinComponent 
 
     protected abstract suspend fun call(params: P): Response<R>
 
-    fun execute(
+    operator fun invoke(
         params: P,
         onSuccess: (R) -> Unit,
         onFailure: (Throwable) -> Unit
