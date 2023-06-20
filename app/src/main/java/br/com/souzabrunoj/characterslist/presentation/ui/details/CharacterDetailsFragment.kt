@@ -50,7 +50,7 @@ class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
     }
 
     private fun setupActionBarTitle() {
-        (activity as AppCompatActivity).supportActionBar?.title = args.characterName
+        (activity as? AppCompatActivity)?.supportActionBar?.title = args.characterName
     }
 
     private fun setupCharacter(character: CharacterDetails) {
