@@ -15,6 +15,7 @@ object Versions {
     const val customTabVersion = "28.0.0"
     const val pagingVersion = "3.1.1"
     const val roomVersion = "2.5.1"
+    const val fragmentVersion = "1.5.5"
 
     //Networking
     const val retrofitVersion = "2.6.1"
@@ -33,6 +34,7 @@ object Versions {
     const val runnerTestVersion = "1.5.2"
     const val rulesTestVersion = "1.5.0"
     const val extJunitVersion = "1.1.5"
+    const val junit5Version = "5.9.3"
     const val espressoCoreVersion = "3.5.1"
     const val orchestratorVersion = "1.0.2"
     const val robolectricVersion = "3.7.1"

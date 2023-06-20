@@ -2,6 +2,7 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.api.initialization.dsl.ScriptHandler.CLASSPATH_CONFIGURATION
 
 private const val IMPLEMENTATION_CONFIGURATION_NAME = "implementation"
+private const val DEBUG_IMPLEMENTATION_CONFIGURATION_NAME = "debugImplementation"
 private const val KAPT_CONFIGURATION_NAME = "kapt"
 private const val ANDROID_TESTE_CONFIGURATION_NAME = "androidTestImplementation"
 private const val TESTE_CONFIGURATION_NAME = "testImplementation"
@@ -77,8 +78,17 @@ fun DependencyHandler.projectAndroidTestImplementation() {
     add(ANDROID_TESTE_CONFIGURATION_NAME, "androidx.test:runner:${Versions.runnerTestVersion}")
     add(ANDROID_TESTE_CONFIGURATION_NAME, "androidx.test:rules:${Versions.rulesTestVersion}")
     add(ANDROID_TESTE_CONFIGURATION_NAME, "androidx.test.ext:junit:${Versions.extJunitVersion}")
-    add(ANDROID_TESTE_CONFIGURATION_NAME, "androidx.test.ext:junit-ktx:${Versions.extJunitVersion}")
+    add(ANDROID_TESTE_CONFIGURATION_NAME, "androidx.test.ext:junit:${Versions.extJunitVersion}")
+    add(ANDROID_TESTE_CONFIGURATION_NAME, "org.junit.jupiter:junit-jupiter:${Versions.extJunitVersion}")
     add(ANDROID_TESTE_CONFIGURATION_NAME, "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}")
+    add(ANDROID_TESTE_CONFIGURATION_NAME, "androidx.arch.core:core-testing:${Versions.archCoreTestVersion}")
+    add(ANDROID_TESTE_CONFIGURATION_NAME,"io.insert-koin:koin-test:${Versions.koinVersion}")
+    add(ANDROID_TESTE_CONFIGURATION_NAME,"io.insert-koin:koin-test-junit4:${Versions.koinVersion}")
+    add(ANDROID_TESTE_CONFIGURATION_NAME,"io.insert-koin:koin-test-junit5:${Versions.koinVersion}")
+    add(DEBUG_IMPLEMENTATION_CONFIGURATION_NAME,"androidx.fragment:fragment-testing:${Versions.fragmentVersion}")
+    add(ANDROID_TESTE_CONFIGURATION_NAME,"io.mockk:mockk-android:${Versions.mockkVersion}")
+    add(ANDROID_TESTE_CONFIGURATION_NAME,"io.mockk:mockk-agent:${Versions.mockkVersion}")
+    add(ANDROID_TESTE_CONFIGURATION_NAME, "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesVersion}")
 }
 
 fun DependencyHandler.projectConfigurantion() {

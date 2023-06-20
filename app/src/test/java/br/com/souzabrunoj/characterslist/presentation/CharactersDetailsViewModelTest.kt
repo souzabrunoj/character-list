@@ -31,6 +31,7 @@ import kotlin.test.assertEquals
 
 @ExperimentalCoroutinesApi
 class CharactersDetailsViewModelTest {
+
     private lateinit var viewModel: CharacterDetailsViewModel
     private val repository: CharacterDetailsRepository = mockk(relaxed = true)
 
