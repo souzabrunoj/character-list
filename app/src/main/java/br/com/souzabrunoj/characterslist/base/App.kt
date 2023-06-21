@@ -20,7 +20,8 @@ class App : Application() {
                 listOf(
                     presentationModule,
                     domainModule,
-                    dataRemoteModule, dataLocalModule
+                    dataRemoteModule,
+                    dataLocalModule
                 )
             )
         }
