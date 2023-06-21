@@ -19,7 +19,7 @@ android {
         versionCode = ConfigData.versionCode
         versionName = ConfigData.versionName
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "br.com.souzabrunoj.characterslist.CustomTestRunner"
         vectorDrawables.useSupportLibrary = true
     }
 
@@ -75,7 +75,6 @@ android {
 
 dependencies {
 
-    implementation("androidx.navigation:navigation-testing:2.6.0")
     kotlinDependencies()
     materialImplementation()
     lifecycleRuntimeDependencies()
