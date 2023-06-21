@@ -57,7 +57,7 @@ class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
         binding.apply {
             with(character) {
                 ivCharacterImage.loadImage(image)
-                tvName.text = name
+                tvCharacterName.text = name
                 tvStatus.text = getString(R.string.character_status_string_format, status)
                 tvSpecies.text = getString(R.string.character_species_string_format, species)
                 tvGender.text = getString(R.string.character_gender_string_format, gender)
