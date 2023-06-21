@@ -9,7 +9,7 @@ object Versions {
     const val constraintLayoutVersion = "2.1.4"
     const val materialtVersion = "1.5.0"
     const val koinVersion = "3.4.0"
-    const val navigationVersion = "2.5.3"
+    const val navigationVersion = "2.6.0"
     const val picassoVersion = "2.8"
     const val annotationVersion = "1.6.0"
     const val customTabVersion = "28.0.0"
@@ -38,6 +38,6 @@ object Versions {
     const val espressoCoreVersion = "3.5.1"
     const val orchestratorVersion = "1.0.2"
     const val robolectricVersion = "3.7.1"
-    const val mockkVersion = "1.13.5"
+    const val mockitoVersion = "5.0.0"
     const val archCoreTestVersion = "2.2.0"
 }

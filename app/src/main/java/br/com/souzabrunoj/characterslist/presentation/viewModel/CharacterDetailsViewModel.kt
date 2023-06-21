@@ -15,8 +15,8 @@ class CharacterDetailsViewModel(
     private val _character = MutableLiveData<CharacterDetails>()
     val character: LiveData<CharacterDetails> = _character
 
-    private val _error = MutableLiveData<Unit>()
-    val error: LiveData<Unit> = _error
+    private val _error = MutableLiveData<Boolean>()
+    val error: LiveData<Boolean> = _error
 
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> = _loading
@@ -31,7 +31,7 @@ class CharacterDetailsViewModel(
                 }
                 .onFailure {
                     _loading.value = false
-                    _error.value = Unit
+                    _error.value = true
                 }
         }
     }
