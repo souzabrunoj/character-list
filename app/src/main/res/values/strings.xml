@@ -14,5 +14,5 @@
     <string name="dead">Dead</string>
     <string name="unknown">Unknown</string>
     <string name="search_not_result">No search results were found.</string>
-    <string name="error_message">"Error querying our server, please try again later! "</string>
+    <string name="error_message">"Error querying our server, please try again later!"</string>
 </resources>

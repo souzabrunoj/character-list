@@ -32,19 +32,20 @@ class CharacterDetailsFragment : Fragment(R.layout.fragment_character_details) {
 
     private fun addObservers() {
         viewModel.character.observe(viewLifecycleOwner) { character ->
-            binding.clContainerView.isVisible = true
+            binding.gpCharacterData.isVisible = true
             setupCharacter(character)
         }
 
-        viewModel.error.observe(viewLifecycleOwner) {
-            binding.tvErrorMassage.isVisible = true
-            binding.clContainerView.isVisible = false
+        viewModel.error.observe(viewLifecycleOwner) { isError ->
+            binding.gpCharacterData.isVisible = !isError
+            binding.tvCharacterName.isVisible = !isError
+            binding.tvErrorMassage.isVisible = isError
         }
 
         viewModel.loading.observe(viewLifecycleOwner) { isLoading ->
             with(binding) {
                 iLoading.root.isVisible = isLoading
-                clContainerView.isVisible = !isLoading
+                gpCharacterData.isVisible = !isLoading
             }
         }
     }
