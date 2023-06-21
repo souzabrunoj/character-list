@@ -39,5 +39,6 @@ object Versions {
     const val orchestratorVersion = "1.0.2"
     const val robolectricVersion = "3.7.1"
     const val mockitoVersion = "5.0.0"
+    const val mockkVersion = "1.13.4"
     const val archCoreTestVersion = "2.2.0"
 }

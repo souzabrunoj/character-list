@@ -33,7 +33,7 @@ import kotlin.test.assertEquals
 class CharactersDetailsViewModelTest {
 
     private lateinit var viewModel: CharacterDetailsViewModel
-    private val repository: CharacterDetailsRepository = mockk(relaxed = true)
+    private val repository: CharacterDetailsRepository = mockk()
 
     private val testModule = module { single { repository } }
 
@@ -42,7 +42,7 @@ class CharactersDetailsViewModelTest {
 
     @Before
     fun setup() {
-        startKoin(modules = listOf(testModule), level = Level.DEBUG)
+        startKoin(modules = listOf(testModule), level = Level.ERROR)
         viewModel = CharacterDetailsViewModel(repository)
         Dispatchers.setMain(Dispatchers.Unconfined)
     }
@@ -68,8 +68,9 @@ class CharactersDetailsViewModelTest {
 
         coEvery { repository.getCharacterDetails(1) } coAnswers { Result.failure(Error()) }
         viewModel.getCharacters(1)
+
         coVerify(exactly = 1) { repository.getCharacterDetails(1) }
-        assertEquals(Unit, viewModel.error.value)
+        assertEquals(true, viewModel.error.value)
         assertEquals(null, viewModel.character.value)
     }
 
