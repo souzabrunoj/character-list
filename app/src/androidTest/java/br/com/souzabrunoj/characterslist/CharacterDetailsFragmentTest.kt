@@ -1,43 +1,62 @@
 package br.com.souzabrunoj.characterslist
 
 import android.os.Bundle
-import androidx.arch.core.executor.ArchTaskExecutor
-import androidx.arch.core.executor.TaskExecutor
-import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
+import br.com.souzabrunoj.characterslist.dataRemote.details.response.CharacterDetailsResponse
+import br.com.souzabrunoj.characterslist.details.onLaunch
+import br.com.souzabrunoj.characterslist.domain.data.details.CharacterDetails
+import br.com.souzabrunoj.characterslist.domain.data.details.toDomain
 import br.com.souzabrunoj.characterslist.domain.repository.details.CharacterDetailsRepository
 import br.com.souzabrunoj.characterslist.uitls.BaseTest
-import br.com.souzabrunoj.characterslist.uitls.onLaunch
-import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import org.koin.dsl.module
+import org.mockito.Mockito.mock
+import org.mockito.Mockito.`when`
+import utils.fromJson
 
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class CharacterDetailsFragmentTest : BaseTest() {
 
-    private val repository: CharacterDetailsRepository = mockk(relaxed = true)
+    private val repository: CharacterDetailsRepository = mock()
+
+    override val mocks = listOf(repository)
 
     override val testDependenciesModules = module { single { repository } }.toList()
 
-    override fun setup() {
-        ArchTaskExecutor.getInstance().setDelegate(object : TaskExecutor() {
-            override fun executeOnDiskIO(runnable: Runnable) = runnable.run()
-            override fun postToMainThread(runnable: Runnable) = runnable.run()
-            override fun isMainThread(): Boolean = true
-        })
+    @Test
+    fun when_is_success_get_character_should_display_data() {
+        val bundle = Bundle().apply {
+            putInt("characterId", 1)
+            putString("characterName", "Morty Smith")
+        }
+        stubSuccessGetCharacter()
+        onLaunch(bundle = bundle) {
+            checkCharacterData()
+        }
     }
 
     @Test
-    fun test() {
+    fun when_is_error_get_character_should_display_data() {
         val bundle = Bundle().apply {
             putInt("characterId", 1)
+            putString("characterName", "Morty Smith")
         }
+        stubErrorGetCharacter()
         onLaunch(bundle = bundle) {
-            onView(withId(R.id.tv_name)).check(matches(withText("Morty Smith")))
+            Thread.sleep(2000)
+            checkErrorState()
         }
+    }
+
+    private fun stubSuccessGetCharacter() = runBlocking {
+        val data: CharacterDetails = fromJson<CharacterDetailsResponse>(
+            "details/success_get_character_details.json"
+        ).toDomain()
+        `when`(repository.getCharacterDetails(1)).thenReturn(Result.success(data))
+    }
+    private fun stubErrorGetCharacter() = runBlocking {
+        `when`(repository.getCharacterDetails(1)).thenReturn(Result.failure(Throwable()))
     }
 }
